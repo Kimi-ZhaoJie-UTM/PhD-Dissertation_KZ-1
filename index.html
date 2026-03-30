@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Cover | Экономика и социум</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif', 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+            min-height: 100vh;
+        }
+        .paper-texture {
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.05) 2px, rgba(255,255,255,.05) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.05) 2px, rgba(255,255,255,.05) 4px);
+        }
+        .certificate-stamp {
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8e6e1 100%);
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                0 2px 4px -1px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 2px solid #d4af37;
+            position: relative;
+        }
+        .certificate-stamp::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 1px solid #d4af37;
+            opacity: 0.6;
+        }
+        .seal {
+            background: radial-gradient(circle, #b91c1c 0%, #991b1b 100%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* 可点击标题样式 */
+        .clickable-title {
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .clickable-title:hover {
+            background: rgba(59, 130, 246, 0.05);
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .clickable-title::after {
+            content: '点击进入目录 | View Contents →';
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: #3b82f6;
+            opacity: 0;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            background: rgba(255,255,255,0.9);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+        }
+        .clickable-title:hover::after {
+            opacity: 1;
+            bottom: -2.5rem;
+        }
+        
+        /* 点击波纹效果 */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        /* 页面过渡动画 */
+        .fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+        }
+    </style>
+</head>
+<body class="paper-texture flex items-center justify-center p-4 md:p-8">
+
+    <!-- A4 比例容器 -->
+    <div id="cover-container" class="w-full max-w-[210mm] aspect-[210/297] bg-white shadow-2xl relative overflow-hidden flex flex-col">
+        
+        <!-- 顶部装饰条 -->
+        <div class="h-3 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900"></div>
+        
+        <!-- 证书徽章区域（贴在右上角） -->
+        <div class="absolute top-8 right-8 z-20 transform rotate-2 hover:rotate-0 transition-transform duration-300">
+            <div class="certificate-stamp rounded-lg p-4 w-64">
+                <!-- 证书头部 -->
+                <div class="flex items-center justify-between mb-2 border-b border-yellow-600/30 pb-2">
+                    <div class="seal w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-yellow-500">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h2a1 1 0 100-2H6V7h5a1 1 0 011 1v5h2V8a3 3 0 00-3-3H6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-bold text-red-800 tracking-widest uppercase">Certificate</span>
+                    <div class="seal w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-yellow-500">
+                        <span class="text-[10px]">✓</span>
+                    </div>
+                </div>
+                
+                <!-- 期刊信息 -->
+                <div class="text-center space-y-1">
+                    <p class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Published in</p>
+                    <h4 class="text-sm font-bold text-blue-900 leading-tight">«ЭКОНОМИКА<br>И СОЦИУМ»</h4>
+                    <p class="text-xs text-gray-600 font-mono">ISSN 2225-1545</p>
+                    
+                    <div class="my-2 h-px bg-gradient-to-r from-transparent via-yellow-600/50 to-transparent"></div>
+                    
+                    <p class="text-[10px] text-gray-500">Issue No <span class="font-bold text-gray-800">11(126)</span></p>
+                    <p class="text-[10px] text-gray-500">Date: <span class="font-bold text-gray-800">27.11.2024</span></p>
+                    
+                    <!-- Crossref 标识 -->
+                    <div class="mt-2 inline-flex items-center gap-1 bg-gray-100 rounded px-2 py-1">
+                        <span class="text-[8px] font-bold text-orange-600">Crossref</span>
+                        <span class="text-[8px] text-gray-400">|</span>
+                        <span class="text-[8px] text-gray-500">DOI Indexed</span>
+                    </div>
+                </div>
+                
+                <!-- 装饰角标 -->
+                <div class="absolute -bottom-1 -left-1 w-4 h-4 border-l-2 border-b-2 border-yellow-600/50"></div>
+                <div class="absolute -bottom-1 -right-1 w-4 h-4 border-r-2 border-b-2 border-yellow-600/50"></div>
+                <div class="absolute -top-1 -left-1 w-4 h-4 border-l-2 border-t-2 border-yellow-600/50"></div>
+                <div class="absolute -top-1 -right-1 w-4 h-4 border-r-2 border-t-2 border-yellow-600/50"></div>
+            </div>
+            
+            <!-- 胶带效果 -->
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 w-24 h-8 bg-yellow-100/80 rotate-1 shadow-sm border-l border-r border-yellow-200/50"></div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="flex-1 flex flex-col items-center justify-center px-12 md:px-20 text-center relative">
+            
+            <!-- 期刊标志区 -->
+            <div class="mb-8">
+                <div class="inline-block p-4 rounded-full bg-blue-50 border-2 border-blue-100 mb-4">
+                    <svg class="w-12 h-12 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <p class="text-sm tracking-[0.3em] text-gray-500 uppercase mb-2">Scientific Article</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-900 to-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 论文标题 - 可点击区域 -->
+            <div class="clickable-title space-y-6 max-w-lg" onclick="goToContents(event)" title="点击进入目录 | Click to view Table of Contents">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight serif select-none">
+                    Языковые барьеры и их влияние на расширение международного бизнеса
+                </h1>
+                
+                <div class="flex items-center justify-center gap-4 text-gray-400 pointer-events-none">
+                    <div class="h-px w-16 bg-gray-300"></div>
+                    <span class="text-xs uppercase tracking-widest">Language Barriers and Their Impact on International Business Expansion</span>
+                    <div class="h-px w-16 bg-gray-300"></div>
+                </div>
+                
+                <h2 class="text-xl text-gray-700 font-medium serif-sc select-none">
+                    语言障碍及其对国际商业扩张的影响
+                </h2>
+                
+                <!-- 点击提示图标 -->
+                <div class="pt-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div class="inline-flex items-center gap-2 text-blue-600 bg-blue-50 px-4 py-2 rounded-full border border-blue-200">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                        </svg>
+                        <span class="text-sm font-medium">查看目录 | View Contents</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 作者信息 -->
+            <div class="mt-12 space-y-3">
+                <p class="text-lg font-semibold text-gray-800">Чжао Цзе <span class="text-gray-400 mx-2">/</span> Zhao Jie <span class="text-gray-400 mx-2">/</span> 赵杰</p>
+                <p class="text-sm text-gray-600 italic">Doctor of Business Administration (DBA)</p>
+                <div class="inline-block mt-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="text-xs text-gray-500">Al-Farabi Kazakh National University</p>
+                    <p class="text-xs text-gray-400">Almaty, Kazakhstan</p>
+                </div>
+            </div>
+
+            <!-- UDK 分类号 -->
+            <div class="absolute bottom-32 left-12 text-xs text-gray-400 font-mono">
+                UDK: 65.012.3:811.111
+            </div>
+
+            <!-- 快速导航提示 -->
+            <div class="absolute bottom-32 right-12 text-xs text-gray-400 flex items-center gap-2 animate-pulse">
+                <span>点击标题进入</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                </svg>
+            </div>
+
+        </div>
+
+        <!-- 底部装饰 -->
+        <div class="h-32 bg-gradient-to-t from-gray-100 to-white relative">
+            <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900"></div>
+            
+            <!-- 底部信息 -->
+            <div class="absolute bottom-6 left-0 right-0 text-center space-y-1">
+                <p class="text-xs text-gray-400 uppercase tracking-widest">Научный электронный журнал</p>
+                <p class="text-[10px] text-gray-400">Scientific Electronic Journal «Economics and Society»</p>
+                <div class="flex items-center justify-center gap-2 mt-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                    <span class="text-[10px] text-gray-500 font-mono">ISSN 2225-1545</span>
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 角落装饰 -->
+        <div class="absolute top-12 left-8 w-16 h-16 border-l-2 border-t-2 border-blue-200/50"></div>
+        <div class="absolute bottom-36 right-8 w-16 h-16 border-r-2 border-b-2 border-blue-200/50"></div>
+
+    </div>
+
+    <script>
+        function goToContents(e) {
+            // 创建波纹效果
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            const rect = e.currentTarget.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+            e.currentTarget.appendChild(ripple);
+            
+            // 页面淡出动画
+            setTimeout(() => {
+                document.getElementById('cover-container').classList.add('fade-out');
+            }, 200);
+            
+            // 延迟跳转（等待动画完成）
+            setTimeout(() => {
+                // 假设目录文件名为 toc.html 或在同一页面的 #toc 锚点
+                // 方式1：跳转到独立目录文件
+                window.location.href = 'toc.html';
+                
+                // 方式2：如果目录在同一页面下方（单页应用模式）
+                // document.getElementById('toc-container').scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+        
+        // 键盘支持：按空格或回车也跳转
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' || e.code === 'Enter') {
+                const title = document.querySelector('.clickable-title');
+                if (title) {
+                    title.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
