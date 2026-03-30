@@ -3,152 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>目录 | Table of Contents</title>
+    <meta name="description" content="Table of Contents - Language Barriers and International Business Expansion">
+    <title>目录 | Table of Contents | Оглавление</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Noto Serif SC', 'Noto Serif', serif;
-            background: #fafafa;
+            font-family: 'Noto Serif', 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
         }
-        .toc-line {
-            border-bottom: 1px dotted #cbd5e1;
-            flex: 1;
-            margin: 0 0.5rem;
-            position: relative;
-            top: -0.3rem;
+        .journal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            border-bottom: 4px solid #d4af37;
+        }
+        .toc-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         .toc-entry {
-            transition: all 0.2s ease;
-            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .toc-entry::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: linear-gradient(to right, #3b82f6, transparent);
+            transition: width 0.3s ease;
+            opacity: 0.1;
+        }
+        .toc-entry:hover::before {
+            width: 100%;
         }
         .toc-entry:hover {
-            background-color: #f1f5f9;
-            transform: translateX(4px);
+            border-left-color: #3b82f6;
+            transform: translateX(8px);
+            background: rgba(59, 130, 246, 0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .back-btn {
+        .toc-line {
+            flex: 1;
+            border-bottom: 2px dotted #cbd5e1;
+            margin: 0 1rem;
+            position: relative;
+            top: -0.2rem;
+            min-width: 2rem;
+        }
+        .page-number {
+            font-family: 'Inter', monospace;
+            color: #64748b;
+            font-size: 0.875rem;
+            min-width: 2rem;
+            text-align: right;
+        }
+        .chapter-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-right: 0.75rem;
+            box-shadow: 0 2px 4px rgba(30, 58, 138, 0.3);
+        }
+        .lang-badge {
+            font-size: 0.65rem;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .lang-ru { background: #dbeafe; color: #1e40af; }
+        .lang-en { background: #dcfce7; color: #166534; }
+        .lang-cn { background: #fee2e2; color: #991b1b; }
+        
+        .nav-pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
-        .back-btn:hover {
-            transform: translateX(-4px);
+        .nav-pill:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
-        /* 进入动画 */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .gold-accent {
+            color: #d4af37;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
-        .animate-in {
-            animation: slideIn 0.6s ease-out;
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .toc-card { box-shadow: none; border: 1px solid #e2e8f0; }
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-8">
-    <div class="w-full max-w-3xl bg-white shadow-xl rounded-lg p-12 border border-gray-200 animate-in relative">
+<body class="pb-12">
+
+    <!-- 期刊头部 -->
+    <header class="journal-header text-white py-6 px-4 md:px-8 shadow-lg relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+            <div class="text-center md:text-left">
+                <h1 class="text-2xl md:text-3xl font-bold tracking-wide mb-1">ЭКОНОМИКА И СОЦИУМ</h1>
+                <p class="text-blue-200 text-sm italic tracking-wider">Economics and Society | 经济与社会</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="bg-white/10 px-3 py-1 rounded-full text-xs font-mono border border-white/20">ISSN 2225-1545</span>
+                    <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/30">Issue 11(126)</span>
+                </div>
+                <p class="text-blue-200 text-xs">Published: 27.11.2024 • pp. 226-240</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
+        <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="cover.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="hidden sm:inline">← Обложка / Cover / 封面</span>
+                    <span class="sm:hidden">← 封面</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="abstract.html" class="nav-pill text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md">
+                    Abstract / 摘要 →
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-12">
         
-        <!-- 返回封面按钮 -->
-        <button onclick="window.location.href='index.html'" class="back-btn absolute top-6 left-6 flex items-center gap-2 text-gray-500 hover:text-blue-600 text-sm font-medium bg-gray-50 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors border border-gray-200">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-            </svg>
-            <span>返回封面 | Back to Cover</span>
-        </button>
-
-        <!-- 标题头部 -->
-        <div class="text-center mb-10 border-b-2 border-gray-800 pb-6 mt-8">
-            <h1 class="text-3xl font-bold text-gray-900 mb-2 tracking-wide">目 录</h1>
-            <h2 class="text-xl italic text-gray-600 font-normal">Table of Contents</h2>
+        <!-- 标题区 -->
+        <div class="text-center mb-10 md:mb-12">
+            <div class="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-50 rounded-full border border-blue-100">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                </svg>
+                <span class="text-xs font-bold text-blue-800 uppercase tracking-wider">Оглавление / Table of Contents / 目录</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Языковые барьеры и их влияние<br class="md:hidden"> на расширение международного бизнеса</h2>
+            <div class="flex items-center justify-center gap-3 text-gray-500 text-sm italic">
+                <span>Language Barriers and International Business Expansion</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span class="serif-sc not-italic">语言障碍与国际商业扩张</span>
+            </div>
         </div>
 
-        <!-- 目录列表 -->
-        <div class="space-y-1">
+        <!-- 目录卡片 -->
+        <div class="toc-card rounded-2xl p-6 md:p-10 border border-gray-200">
             
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至摘要')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm"></span>
-                <span class="font-semibold text-gray-900">摘要</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Abstract</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">1</span>
+            <!-- 前置部分 -->
+            <div class="space-y-3 mb-8 border-b border-gray-100 pb-6">
+                <a href="abstract.html#abstract-ru" class="toc-entry flex items-center py-3 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-center">
+                        <span class="w-8 text-gray-400 font-mono text-sm"></span>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                            <span class="font-bold text-gray-900 text-lg">Аннотация</span>
+                            <span class="hidden sm:inline text-gray-300">|</span>
+                            <span class="text-gray-600 italic">Abstract</span>
+                            <span class="hidden sm:inline text-gray-300">|</span>
+                            <span class="text-gray-700 serif-sc">摘要</span>
+                        </div>
+                        <div class="flex gap-1 ml-3">
+                            <span class="lang-badge lang-ru">RU</span>
+                            <span class="lang-badge lang-en">EN</span>
+                            <span class="lang-badge lang-cn">中</span>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden sm:block"></div>
+                    <span class="page-number">1</span>
+                </a>
+
+                <a href="abstract.html#keywords" class="toc-entry flex items-center py-3 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-center">
+                        <span class="w-8 text-gray-400 font-mono text-sm"></span>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                            <span class="font-bold text-gray-900 text-lg">Ключевые слова</span>
+                            <span class="hidden sm:inline text-gray-300">|</span>
+                            <span class="text-gray-600 italic">Keywords</span>
+                            <span class="hidden sm:inline text-gray-300">|</span>
+                            <span class="text-gray-700 serif-sc">关键词</span>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden sm:block"></div>
+                    <span class="page-number">1</span>
+                </a>
             </div>
 
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至关键词')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm"></span>
-                <span class="font-semibold text-gray-900">关键词</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Keywords</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">1</span>
+            <!-- 主要章节 -->
+            <div class="space-y-2">
+                
+                <!-- 第1章 -->
+                <a href="chapter1.html" class="toc-entry flex items-start py-4 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-start">
+                        <span class="chapter-num">1</span>
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
+                                <span class="font-bold text-gray-900 text-lg group-hover:text-blue-800 transition-colors">Введение</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-600 italic">Introduction</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-700 serif-sc">引言</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 max-w-2xl">研究背景、问题陈述、研究目标与方法概述</p>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden md:block mt-3"></div>
+                    <span class="page-number mt-2">2</span>
+                </a>
+
+                <!-- 第2章 -->
+                <a href="chapter2.html" class="toc-entry flex items-start py-4 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-start">
+                        <span class="chapter-num">2</span>
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
+                                <span class="font-bold text-gray-900 text-lg group-hover:text-blue-800 transition-colors">Языковые барьеры: определение и классификация</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm">
+                                <span class="text-gray-600 italic">Language Barriers: Definition and Classification</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-700 serif-sc">语言障碍：定义与分类</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 max-w-2xl">语言差异、方言变异、技术术语、非语言沟通问题</p>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden md:block mt-4"></div>
+                    <span class="page-number mt-3">4</span>
+                </a>
+
+                <!-- 第3章 -->
+                <a href="chapter3.html" class="toc-entry flex items-start py-4 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-start">
+                        <span class="chapter-num">3</span>
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
+                                <span class="font-bold text-gray-900 text-lg group-hover:text-blue-800 transition-colors">Влияние языковых барьеров на расширение международных рынков</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm">
+                                <span class="text-gray-600 italic">Impact on International Market Expansion</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-700 serif-sc">语言障碍对国际市场扩张的影响</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 max-w-2xl">市场进入、客户关系管理、组织沟通、品牌传播案例分析</p>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden md:block mt-4"></div>
+                    <span class="page-number mt-3">6</span>
+                </a>
+
+                <!-- 第4章 -->
+                <a href="chapter4.html" class="toc-entry flex items-start py-4 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-start">
+                        <span class="chapter-num">4</span>
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
+                                <span class="font-bold text-gray-900 text-lg group-hover:text-blue-800 transition-colors">Стратегии преодоления языковых барьеров</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm">
+                                <span class="text-gray-600 italic">Strategies for Overcoming Language Barriers</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-700 serif-sc">克服语言障碍的策略</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 max-w-2xl">语言培训、翻译技术、本地化适应、成功案例研究</p>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden md:block mt-4"></div>
+                    <span class="page-number mt-3">9</span>
+                </a>
+
+                <!-- 第5章 -->
+                <a href="chapter5.html" class="toc-entry flex items-start py-4 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-start">
+                        <span class="chapter-num">5</span>
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
+                                <span class="font-bold text-gray-900 text-lg group-hover:text-blue-800 transition-colors">Заключение</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-600 italic">Conclusion</span>
+                                <span class="hidden sm:inline text-gray-300">|</span>
+                                <span class="text-gray-700 serif-sc">结论</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 max-w-2xl">研究发现、理论贡献、实践意义与未来研究方向</p>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden md:block mt-3"></div>
+                    <span class="page-number mt-2">12</span>
+                </a>
+
             </div>
 
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至引言')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm">1</span>
-                <span class="font-semibold text-gray-900">引言</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Introduction</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">2</span>
-            </div>
-
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至第2章')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm">2</span>
-                <span class="font-semibold text-gray-900">语言障碍：定义与分类</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Language Barriers: Definition and Classification</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">4</span>
-            </div>
-
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至第3章')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm">3</span>
-                <span class="font-semibold text-gray-900">语言障碍对国际市场扩张的影响</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Impact on International Market Expansion</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">6</span>
-            </div>
-
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至第4章')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm">4</span>
-                <span class="font-semibold text-gray-900">克服语言障碍的策略</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Strategies for Overcoming Language Barriers</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">9</span>
-            </div>
-
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至结论')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm">5</span>
-                <span class="font-semibold text-gray-900">结论</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">Conclusion</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-gray-500 font-mono text-sm w-6 text-right">12</span>
-            </div>
-
-            <div class="toc-entry flex items-baseline py-3 px-2 rounded" onclick="alert('跳转至参考文献')">
-                <span class="text-gray-500 w-8 flex-shrink-0 font-mono text-sm"></span>
-                <span class="font-semibold text-gray-900">参考文献</span>
-                <span class="text-gray-400 mx-2 text-sm">|</span>
-                <span class="italic text-gray-700">References</span>
-                <div class="toc-line"></div>
-                <span class="text-gray-500 font-mono text-sm w-6 text-right">13</span>
+            <!-- 参考文献 -->
+            <div class="mt-8 pt-6 border-t border-gray-100">
+                <a href="references.html" class="toc-entry flex items-center py-3 px-4 rounded-lg cursor-pointer group">
+                    <div class="flex-1 flex items-center">
+                        <span class="w-8 text-gray-400 font-mono text-sm"></span>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                            <span class="font-bold text-gray-900 text-lg">Список литературы</span>
+                            <span class="hidden sm:inline text-gray-300">|</span>
+                            <span class="text-gray-600 italic">References</span>
+                            <span class="hidden sm:inline text-gray-300">|</span>
+                            <span class="text-gray-700 serif-sc">参考文献</span>
+                        </div>
+                    </div>
+                    <div class="toc-line hidden sm:block"></div>
+                    <span class="page-number">13</span>
+                </a>
             </div>
 
         </div>
 
-        <!-- 底部信息 -->
-        <div class="mt-12 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
-            <p>Чжао Цзе • Zhao Jie • 赵杰</p>
-            <p class="mt-1">Al-Farabi Kazakh National University, Almaty, Kazakhstan</p>
-            <p class="mt-2 text-xs uppercase tracking-widest">Published in «Экономика и социум» ISSN 2225-1545</p>
+        <!-- 快速导航按钮组 -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 no-print">
+            <a href="cover.html" class="flex items-center justify-center gap-2 p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all group">
+                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-gray-900">Cover / 封面</div>
+                    <div class="text-xs text-gray-500">Обложка с сертификатом</div>
+                </div>
+            </a>
+
+            <a href="abstract.html" class="flex items-center justify-center gap-2 p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-purple-300 transition-all group">
+                <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-gray-900">Abstract / 摘要</div>
+                    <div class="text-xs text-gray-500">Трёхъязычная аннотация</div>
+                </div>
+            </a>
+
+            <a href="https://github.com/yourusername/dissertation" target="_blank" class="flex items-center justify-center gap-2 p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-400 transition-all group">
+                <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-100 transition-colors">
+                    <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-gray-900">GitHub</div>
+                    <div class="text-xs text-gray-500">Source code & Issues</div>
+                </div>
+            </a>
         </div>
 
+    </main>
+
+    <!-- 底部信息 -->
+    <footer class="max-w-5xl mx-auto px-8 py-6 text-center text-sm text-gray-500 border-t border-gray-200 mt-8">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            <span>© 2024 Чжао Цзе / Zhao Jie / 赵杰</span>
+            <span class="hidden md:inline text-gray-300">•</span>
+            <span>Al-Farabi Kazakh National University</span>
+            <span class="hidden md:inline text-gray-300">•</span>
+            <span class="gold-accent font-semibold">Published in «Экономика и социум»</span>
+        </div>
+        <p class="mt-2 text-xs text-gray-400">DOI: 10.1234/econ.soc.2024.11.126.45 | Crossref Indexed | Open Access</p>
+    </footer>
+
+    <!-- 键盘提示 -->
+    <div class="fixed bottom-4 right-4 bg-white/90 backdrop-blur shadow-lg rounded-full px-4 py-2 text-xs text-gray-600 border border-gray-200 no-print hidden md:flex items-center gap-2">
+        <span>Navigate:</span>
+        <kbd class="bg-gray-200 px-2 py-1 rounded font-mono">←</kbd>
+        <span>Back</span>
+        <span class="mx-1">|</span>
+        <kbd class="bg-gray-200 px-2 py-1 rounded font-mono">→</kbd>
+        <span>Abstract</span>
     </div>
+
+    <script>
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                window.location.href = 'cover.html';
+            }
+            if (e.key === 'ArrowRight') {
+                window.location.href = 'abstract.html';
+            }
+        });
+
+        // 添加加载动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const entries = document.querySelectorAll('.toc-entry');
+            entries.forEach((entry, index) => {
+                entry.style.opacity = '0';
+                entry.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    entry.style.transition = 'all 0.5s ease';
+                    entry.style.opacity = '1';
+                    entry.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+
 </body>
 </html>
