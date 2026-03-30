@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chapter 5: Conclusion - Language Barriers and International Business Expansion">
+    <title>Chapter 5 | Глава 5 | 第5章</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-gold: #d4af37;
+            --conclusion-purple: #6b21a8;
+        }
+        body {
+            font-family: 'Noto Serif', 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #faf5ff 0%, #f8fafc 100%);
+            min-height: 100vh;
+        }
+        .journal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            border-bottom: 4px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+        .journal-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .chapter-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+            border-left: 6px solid #d4af37;
+        }
+        .section-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .finding-card {
+            background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+            border: 2px solid #e9d5ff;
+            border-radius: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .finding-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #9333ea, #c084fc);
+            transition: width 0.3s ease;
+        }
+        .finding-card:hover::before {
+            width: 6px;
+        }
+        .finding-card:hover {
+            border-color: #c084fc;
+            transform: translateX(4px);
+        }
+        .limitation-box {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            border-left: 4px solid #f97316;
+        }
+        .future-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #0ea5e9;
+        }
+        .final-statement {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 50%, #4c1d95 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .final-statement::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+        .nav-pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .nav-pill:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #6b21a8);
+            z-index: 100;
+            transition: width 0.1s;
+        }
+        .implication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .implication-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: all 0.2s;
+        }
+        .implication-item:hover {
+            border-color: #d4af37;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .section-card, .finding-card { box-shadow: none; break-inside: avoid; }
+            .final-statement { background: #1e3a8a !important; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="pb-12">
+
+    <!-- 阅读进度条 -->
+    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+
+    <!-- 期刊头部 -->
+    <header class="journal-header text-white py-6 px-4 md:px-8 shadow-lg relative z-20">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+            <div class="text-center md:text-left">
+                <h1 class="text-2xl md:text-3xl font-bold tracking-wide mb-1">ЭКОНОМИКА И СОЦИУМ</h1>
+                <p class="text-blue-200 text-sm italic tracking-wider">Economics and Society | 经济与社会</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-2 text-sm">
+                <div class="flex items-center gap-3">
+                    <span class="bg-white/10 px-3 py-1 rounded-full text-xs font-mono border border-white/20">ISSN 2225-1545</span>
+                    <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/30">Issue 11(126)</span>
+                </div>
+                <p class="text-blue-200 text-xs">Published: 27.11.2024 • pp. 12</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
+        <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="toc.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <span class="hidden sm:inline">Contents / 目录</span>
+                </a>
+                <span class="text-gray-300">|</span>
+                <a href="chapter4.html" class="text-gray-600 hover:text-blue-800 transition-colors text-sm">
+                    ← Ch.4
+                </a>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 5 of 5</span>
+                <a href="references.html" class="nav-pill text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md flex items-center gap-2">
+                    <span>References →</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="max-w-5xl mx-auto px-4 md:px-8 py-8 md:py-12">
+
+        <!-- 章节标题区 -->
+        <div class="chapter-hero rounded-2xl shadow-xl p-6 md:p-10 mb-10 relative overflow-hidden">
+            <div class="absolute top-4 right-4 w-24 h-24 bg-gradient-to-br from-yellow-100 to-purple-50 rounded-full opacity-50 blur-2xl"></div>
+            
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-500 text-white flex items-center justify-center font-bold text-xl shadow-lg">5</span>
+                    <div class="h-px flex-1 bg-gradient-to-r from-yellow-200 to-transparent max-w-xs"></div>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-bold uppercase tracking-wider">Conclusion</span>
+                </div>
+
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                    Заключение
+                </h1>
+                
+                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-gray-600 mb-4">
+                    <p class="text-lg italic">Conclusion</p>
+                    <span class="hidden md:inline text-gray-300">•</span>
+                    <p class="text-lg serif-sc text-gray-700">结论</p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">Key Findings</span>
+                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">Theoretical Contribution</span>
+                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Future Research</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心发现 -->
+        <section id="findings" class="section-card p-6 md:p-8 mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900">Основные выводы / Key Findings / 核心发现</h2>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <p class="text-gray-700 leading-relaxed text-justify">
+                    Language barriers play a significant role in the expansion of international businesses, affecting multinational companies in numerous ways. As companies attempt to enter new markets, the challenges posed by language differences influence critical aspects such as decision-making, operations, and customer relationships.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-justify serif-sc">
+                    语言障碍在国际商业扩张中扮演着重要角色，以多种方式影响跨国公司。语言不仅仅是沟通工具，更是塑造消费者行为、商业实践和市场期望的文化和社会动态的反映。
+                </p>
+            </div>
+
+            <!-- 主要发现卡片 -->
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="finding-card p-4">
+                    <div class="flex items-start gap-3">
+                        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Strategic Asset Perspective</h4>
+                            <p class="text-sm text-gray-600">Language is not merely a communication tool but a strategic asset that directly impacts business growth and international expansion.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finding-card p-4">
+                    <div class="flex items-start gap-3">
+                        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Multifaceted Impact</h4>
+                            <p class="text-sm text-gray-600">Barriers affect market entry, CRM, organizational efficiency, and brand communication simultaneously.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finding-card p-4">
+                    <div class="flex items-start gap-3">
+                        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Mitigation Effectiveness</h4>
+                            <p class="text-sm text-gray-600">Language training, technology, and localization strategies significantly reduce communication barriers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finding-card p-4">
+                    <div class="flex items-start gap-3">
+                        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Cultural Integration</h4>
+                            <p class="text-sm text-gray-600">Cultural sensitivity is equally crucial as linguistic competence for market success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 理论与实践贡献 -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            
+            <!-- 理论贡献 -->
+            <section class="section-card p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Теоретический вклад / 理论贡献</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 mt-1">•</span>
+                        <span>Extends international business theory by positioning language as a strategic asset rather than merely an operational tool</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 mt-1">•</span>
+                        <span>Develops an integrated framework connecting linguistic barriers with cultural adaptation strategies</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-500 mt-1">•</span>
+                        <span>Contributes to cross-cultural communication literature through multinational case analysis</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 实践意义 -->
+            <section class="section-card p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-green-100 text-green-700 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Практическое значение / 实践意义</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 mt-1">•</span>
+                        <span>Provides actionable strategies for HR (multilingual recruitment) and Marketing (localization)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 mt-1">•</span>
+                        <span>Offers technology adoption roadmap for AI translation tools</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500 mt-1">•</span>
+                        <span>Guides risk management for brand communication in new markets</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- 研究局限 -->
+        <section class="limitation-box rounded-xl p-6 mb-6 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                </div>
+                <h3 class="font-bold text-gray-900">Ограничения исследования / Limitations / 研究局限</h3>
+            </div>
+            <div class="space-y-3 text-sm text-gray-700">
+                <p class="flex items-start gap-2">
+                    <span class="text-orange-500 font-bold">1.</span>
+                    <span>The study primarily focuses on the impact of language barriers from a general perspective, and the sample size of case studies may not fully represent the diversity of global business contexts.</span>
+                </p>
+                <p class="flex items-start gap-2">
+                    <span class="text-orange-500 font-bold">2.</span>
+                    <span>The complexity of cultural differences and the rapidly evolving nature of language technologies pose challenges in providing definitive long-term solutions.</span>
+                </p>
+                <p class="flex items-start gap-2">
+                    <span class="text-orange-500 font-bold">3.</span>
+                    <span>Specific regional or industry-focused granular analysis requires further investigation.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- 未来研究 -->
+        <section class="future-box rounded-xl p-6 mb-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <h3 class="font-bold text-gray-900">Направления будущих исследований / Future Research / 未来研究方向</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
+                    <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+                        AI Technology Impact
+                    </h4>
+                    <p class="text-xs text-gray-600">Investigate how AI-powered translation tools and real-time communication platforms are transforming the international business landscape</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
+                    <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+                        Industry-Specific Studies
+                    </h4>
+                    <p class="text-xs text-gray-600">Explore more in-depth case studies of companies in specific regions or industries for granular understanding</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
+                    <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+                        Communication Efficiency
+                    </h4>
+                    <p class="text-xs text-gray-600">Examine the relationship between language technology adoption and communication efficiency metrics</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
+                    <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+                        Cultural Integration
+                    </h4>
+                    <p class="text-xs text-gray-600">Study the evolving dynamics of language and its role in global economy and market integration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最终结论陈述 -->
+        <div class="final-statement rounded-2xl p-8 md:p-10 text-white shadow-2xl mb-8 relative">
+            <div class="relative z-10 text-center max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <svg class="w-16 h-16 mx-auto text-yellow-400 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                
+                <h3 class="text-2xl md:text-3xl font-bold mb-4 italic serif">
+                    "Language is not just a communication tool<br>but a strategic asset"
+                </h3>
+                
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6 rounded-full"></div>
+                
+                <p class="text-lg md:text-xl leading-relaxed opacity-90 mb-4">
+                    Ultimately, this research suggests that language influences decision-making and business success in the global marketplace. By addressing language barriers through integrated strategies—combining human capital development, technological solutions, and deep cultural adaptation—businesses can enhance their global presence and build lasting relationships with customers worldwide.
+                </p>
+                
+                <p class="text-lg serif-sc opacity-90 mt-4">
+                    通过采用这些策略，企业可以克服语言障碍，加强其在全球市场的存在，并与世界各地的客户建立持久的关系。
+                </p>
+                
+                <div class="mt-8 pt-6 border-t border-white/20 text-sm opacity-70">
+                    <p>Чжао Цзе / Zhao Jie / 赵杰</p>
+                    <p class="mt-1">Al-Farabi Kazakh National University, 2024</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部导航 -->
+    <footer class="max-w-5xl mx-auto px-8 mt-8 mb-12 no-print">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter4.html" class="flex items-center gap-3 text-gray-600 hover:text-blue-800 transition-colors group">
+                    <div class="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-xs text-gray-400 uppercase">Previous</div>
+                        <div class="font-semibold">Chapter 4</div>
+                        <div class="text-xs text-gray-500">Overcoming Strategies</div>
+                    </div>
+                </a>
+
+                <a href="toc.html" class="flex flex-col items-center text-gray-400 hover:text-blue-800 transition-colors px-8">
+                    <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <span class="text-xs">Table of Contents</span>
+                </a>
+
+                <a href="references.html" class="flex items-center gap-3 text-gray-600 hover:text-purple-800 transition-colors group text-right">
+                    <div class="text-right">
+                        <div class="text-xs text-gray-400 uppercase">Next</div>
+                        <div class="font-semibold">References</div>
+                        <div class="text-xs text-gray-500">Список литературы</div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-purple-100 group-hover:bg-purple-200 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 页脚 -->
+    <div class="max-w-5xl mx-auto px-8 text-center text-xs text-gray-400 pb-8">
+        <p>© 2024 Чжао Цзе / Zhao Jie / 赵杰 • Al-Farabi Kazakh National University</p>
+        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 5, pp. 12</p>
+    </div>
+
+    <script>
+        // 阅读进度条
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                window.location.href = 'chapter4.html';
+            }
+            if (e.key === 'ArrowRight') {
+                window.location.href = 'references.html';
+            }
+        });
+    </script>
+
+</body>
+</html>
