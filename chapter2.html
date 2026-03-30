@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chapter 2 - Language Barriers: Definition and Classification">
+    <title>Глава 2 | Chapter 2 | 第2章</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-gold: #d4af37;
+        }
+        body {
+            font-family: 'Noto Serif', 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+        }
+        .journal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            border-bottom: 4px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+        .journal-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .content-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            transition: width 0.3s ease;
+        }
+        .card-blue::before { background: linear-gradient(to bottom, #1e40af, #3b82f6); }
+        .card-purple::before { background: linear-gradient(to bottom, #7c3aed, #a78bfa); }
+        .card-green::before { background: linear-gradient(to bottom, #059669, #10b981); }
+        .card-orange::before { background: linear-gradient(to bottom, #ea580c, #fb923c); }
+        .content-card:hover::before {
+            width: 6px;
+        }
+        
+        .type-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .type-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .nav-pill:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .chapter-num-lg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, #7c3aed, #a78bfa);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3);
+        }
+        .definition-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 0.75rem;
+            position: relative;
+        }
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 1;
+            color: #3b82f6;
+            opacity: 0.2;
+            position: absolute;
+            top: -0.5rem;
+            left: 1rem;
+            font-family: serif;
+        }
+        .classification-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .classification-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .type-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .type-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+        }
+        .type-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .culture-connection {
+            background: linear-gradient(to right, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .content-card { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; }
+            .type-card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="pb-12">
+
+    <!-- 期刊头部 -->
+    <header class="journal-header text-white py-6 px-4 md:px-8 shadow-lg relative z-20">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+            <div class="text-center md:text-left">
+                <h1 class="text-2xl md:text-3xl font-bold tracking-wide mb-1">ЭКОНОМИКА И СОЦИУМ</h1>
+                <p class="text-blue-200 text-sm italic tracking-wider">Economics and Society | 经济与社会</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-2 text-sm">
+                <div class="flex items-center gap-3">
+                    <span class="bg-white/10 px-3 py-1 rounded-full text-xs font-mono border border-white/20">ISSN 2225-1545</span>
+                    <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/30">Issue 11(126)</span>
+                </div>
+                <p class="text-blue-200 text-xs">Published: 27.11.2024 • pp. 226-240</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
+        <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="chapter1.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="hidden sm:inline">← Chapter 1 / Глава 1 / 第1章</span>
+                    <span class="sm:hidden">← 第1章</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs text-gray-500 hidden md:inline">Chapter 2 / Глава 2 / 第2章</span>
+                <span class="w-px h-4 bg-gray-300 hidden md:block"></span>
+                <a href="toc.html" class="nav-pill text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md flex items-center gap-2">
+                    <span>Contents / 目录</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="max-w-5xl mx-auto px-4 md:px-8 py-8 md:py-12 fade-in-up">
+
+        <!-- 章节标题区 -->
+        <div class="text-center mb-12">
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <div class="chapter-num-lg">2</div>
+                <div class="h-px w-24 bg-gradient-to-r from-purple-900 to-transparent"></div>
+                <div class="h-px w-24 bg-gradient-to-l from-purple-900 to-transparent"></div>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 serif">
+                Языковые барьеры: определение и классификация
+            </h1>
+            
+            <div class="flex items-center justify-center gap-3 text-gray-500 mb-2">
+                <span class="text-lg italic">Language Barriers: Definition and Classification</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span class="text-xl serif-sc">语言障碍：定义与分类</span>
+            </div>
+            
+            <div class="inline-block mt-4 px-4 py-2 bg-purple-50 rounded-full border border-purple-100">
+                <span class="text-xs font-bold text-purple-800 uppercase tracking-wider">Conceptual Framework / 概念框架</span>
+            </div>
+        </div>
+
+        <!-- 内容区 -->
+        <div class="space-y-8">
+
+            <!-- 2.1 定义 -->
+            <section class="content-card card-blue p-6 md:p-8">
+                <div class="pl-4">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="type-badge bg-blue-100 text-blue-800 border border-blue-200">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            2.1 Определение / Definition / 定义
+                        </span>
+                    </h2>
+
+                    <div class="definition-box p-6 md:p-8 rounded-xl relative mb-6">
+                        <span class="quote-mark">"</span>
+                        <div class="grid md:grid-cols-3 gap-6 relative z-10">
+                            <div>
+                                <p class="text-sm text-gray-700 leading-relaxed text-justify mb-2">
+                                    <strong>Языковые барьеры</strong> — это проблемы, возникающие, когда люди или организации не могут эффективно общаться из-за различий в языке.
+                                </p>
+                                <p class="text-xs text-gray-500 mt-2">Эти препятствия могут варьироваться от простых недоразумений до серьезных коммуникационных сбоев, затрагивая как личные, так и деловые взаимодействия.</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700 leading-relaxed text-justify mb-2 italic">
+                                    <strong>Language barriers</strong> refer to the challenges that arise when people or organizations cannot effectively communicate due to differences in language.
+                                </p>
+                                <p class="text-xs text-gray-500 mt-2 italic">These obstacles can range from simple misunderstandings to severe communication breakdowns, affecting both personal and business interactions.</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-700 leading-relaxed text-justify mb-2 serif-sc">
+                                    <strong>语言障碍</strong>指的是由于语言差异而导致个人或组织无法有效沟通时出现的挑战。
+                                </p>
+                                <p class="text-xs text-gray-500 mt-2 serif-sc">这些障碍可能从简单的误解到严重的沟通中断，影响个人和商业互动。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50/50 p-4 rounded-lg border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-2 text-sm flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                            Ключевая характеристика / Key Characteristic / 关键特征
+                        </h4>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+                            <p>Концепция многоаспектна и проявляется в различных формах — от различий в словарном запасе до сложных культурных нюансов.</p>
+                            <p class="italic">The concept is multifaceted, manifesting in various forms from vocabulary differences to complex cultural nuances embedded in language use.</p>
+                            <p class="serif-sc">该概念是多层面的，可从词汇差异到语言使用中嵌入的复杂文化细微差别等各种形式表现出来。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.2 分类 -->
+            <section class="content-card card-purple p-6 md:p-8">
+                <div class="pl-4">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="type-badge bg-purple-100 text-purple-800 border border-purple-200">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                            2.2 Классификация / Classification / 分类
+                        </span>
+                    </h2>
+
+                    <div class="classification-grid">
+                        <!-- 类型1：语言差异 -->
+                        <div class="type-card">
+                            <div class="type-icon bg-blue-100 text-blue-600">🌐</div>
+                            <h3 class="font-bold text-gray-900 mb-2">1. Лингвистические различия</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Linguistic Differences / 语言差异</p>
+                            <p class="text-sm text-gray-700 text-justify">
+                                Различные языки (английский vs мандарин, русский vs арабский) создают фундаментальные коммуникационные разрывы. Наиболее очевидная форма барьера, особенно критичная при работе в регионах, где родной язык компании не распространен.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-1">
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">English vs Mandarin</span>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Russian vs Arabic</span>
+                            </div>
+                        </div>
+
+                        <!-- 类型2：方言变异 -->
+                        <div class="type-card">
+                            <div class="type-icon bg-green-100 text-green-600">🗣️</div>
+                            <h3 class="font-bold text-gray-900 mb-2">2. Диалектные вариации</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Dialectal Variations / 方言变异</p>
+                            <p class="text-sm text-gray-700 text-justify">
+                                Даже внутри одного языка региональные вариации и акценты могут вызывать путаницу или неверную интерпретацию. Например, британский и американский английский, северный и южный китайский (путунхуа vs кантонский).
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-1">
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">British vs American</span>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Putonghua vs Cantonese</span>
+                            </div>
+                        </div>
+
+                        <!-- 类型3：技术术语 -->
+                        <div class="type-card">
+                            <div class="type-icon bg-purple-100 text-purple-600">⚙️</div>
+                            <h3 class="font-bold text-gray-900 mb-2">3. Технический жаргон</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Technical Jargon / 技术术语</p>
+                            <p class="text-sm text-gray-700 text-justify">
+                                Специализированная терминология, часто используемая в профессиональных или отраслевых контекстах, может создавать особые барьеры, так как специфические термины не имеют прямых эквивалентов в других языках.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-1">
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Legal terms</span>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Medical terminology</span>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Industry slang</span>
+                            </div>
+                        </div>
+
+                        <!-- 类型4：非语言沟通 -->
+                        <div class="type-card">
+                            <div class="type-icon bg-orange-100 text-orange-600">🤝</div>
+                            <h3 class="font-bold text-gray-900 mb-2">4. Невербальная коммуникация</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Non-verbal Communication / 非语言沟通</p>
+                            <p class="text-sm text-gray-700 text-justify">
+                                Язык тела, жесты, мимика и выражение лица различаются драматически между культурами и могут привести к недоразумениям при неправильной интерпретации. Например, знак "OK" имеет разное значение в разных странах.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-1">
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Body language</span>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Eye contact</span>
+                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Personal space</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-purple-50 p-4 rounded-lg border border-purple-100">
+                        <p class="text-sm text-gray-700 text-center italic">
+                            <strong>Взаимосвязь типов:</strong> Эти виды языковых барьеров могут пересекаться и усиливать друг друга, создавая более сложные проблемы в межкультурной коммуникации.
+                        </p>
+                        <p class="text-xs text-center text-gray-500 mt-2 serif-sc">
+                            这些类型的语言障碍可能交叉并相互加剧，导致更复杂的跨文化沟通问题
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.3 语言与文化的关系 -->
+            <section class="content-card card-orange p-6 md:p-8">
+                <div class="pl-4">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="type-badge bg-orange-100 text-orange-800 border border-orange-200">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            2.3 Язык и культура / Language and Culture / 语言与文化
+                        </span>
+                    </h2>
+
+                    <div class="culture-connection p-6 rounded-lg mb-6">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="font-bold text-amber-900 mb-2 text-sm uppercase">Взаимосвязь</h4>
+                                <p class="text-sm text-gray-800 leading-relaxed text-justify">
+                                    Языковые барьеры тесно связаны с культурными различиями. Язык сам по себе является отражением более глубоких культурных различий, часто отражая и усиливая культурные различия.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-amber-900 mb-2 text-sm uppercase italic">Reflection</h4>
+                                <p class="text-sm text-gray-800 leading-relaxed text-justify italic">
+                                    Language barriers are closely related to cultural differences. Language itself is a reflection of deeper cultural distinctions, often mirroring and intensifying cultural disparities.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-amber-900 mb-2 text-sm uppercase serif-sc">文化反映</h4>
+                                <p class="text-sm text-gray-800 leading-relaxed text-justify serif-sc">
+                                    语言障碍与文化差异密切相关。语言本身是更深层次文化区别的反映，常常体现并强化文化差异。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                            <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2 text-sm">
+                                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xs">⚠️</span>
+                                Примеры культурных ловушек / Cultural Traps / 文化陷阱案例
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-amber-500 mt-1">•</span>
+                                    <span><strong>Прямота vs намек:</strong> Западные культуры ценят прямоту, тогда как восточные предпочитают намеки и вежливость</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-amber-500 mt-1">•</span>
+                                    <span><strong>Контекст:</strong> Высококонтекстуальные культуры (Япония, арабский мир) vs низкоконтекстуальные (США, Германия)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-amber-500 mt-1">•</span>
+                                    <span class="serif-sc"><strong>时间观念：</strong>单一时间文化（准时）vs 多重时间文化（灵活）</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-orange-50 to-white p-4 rounded-lg border border-orange-200">
+                            <h4 class="font-bold text-orange-900 mb-3 text-sm uppercase">Ключевой вывод / Key Insight / 核心观点</h4>
+                            <p class="text-sm text-gray-800 leading-relaxed italic mb-2">
+                                "Overcoming language barriers is not only about learning new words or grammar rules but also about gaining cultural awareness and understanding the underlying social contexts that shape communication practices."
+                            </p>
+                            <p class="text-sm text-gray-700 serif-sc border-t border-orange-200 pt-2 mt-2">
+                                克服语言障碍不仅是学习新单词或语法规则，还包括获得文化意识，理解塑造沟通实践的潜在社会背景。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 章节总结 -->
+            <section class="content-card card-green p-6 md:p-8 bg-gradient-to-br from-green-50/50 to-white">
+                <div class="pl-4">
+                    <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Резюме главы / Chapter Summary / 章节小结
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white p-3 rounded border border-green-100">
+                            <p class="text-gray-700">Глава определила языковые барьеры как многоаспектные препятствия эффективной коммуникации, классифицированные по четырем типам.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border border-green-100">
+                            <p class="text-gray-700 italic">This chapter defined language barriers as multifaceted obstacles to effective communication, classified into four main types: linguistic, dialectal, technical, and non-verbal.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded border border-green-100">
+                            <p class="text-gray-700 serif-sc">本章将语言障碍定义为有效沟通的多层面障碍，并将其分为四种类型：语言差异、方言变异、技术术语和非语言沟通问题。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <span class="inline-flex items-center gap-2 text-xs text-green-700 bg-green-100 px-3 py-1 rounded-full">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                            Следующая глава: Влияние на расширение рынков / Next: Market Impact / 下一章：市场影响分析
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="mt-12 flex flex-col md:flex-row justify-between items-center gap-4 no-print">
+            <a href="chapter1.html" class="flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-md border border-gray-200 text-gray-600 hover:text-blue-800 hover:border-blue-300 transition-all group">
+                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                <span>← Chapter 1 / 第1章</span>
+            </a>
+            
+            <div class="text-center text-xs text-gray-400">
+                <span>Chapter 2 of 5</span>
+                <div class="w-32 h-1 bg-gray-200 rounded-full mt-2 overflow-hidden">
+                    <div class="w-2/5 h-full bg-purple-600 rounded-full"></div>
+                </div>
+            </div>
+
+            <a href="chapter3.html" class="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full shadow-md hover:bg-purple-700 transition-all group">
+                <span>Chapter 3 / 第3章 →</span>
+                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="max-w-5xl mx-auto px-8 mt-12 pb-8 text-center text-xs text-gray-400 border-t border-gray-200 pt-6">
+        <p>© 2024 Чжао Цзе / Zhao Jie / 赵杰 • Al-Farabi Kazakh National University</p>
+        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Issue 11(126)</p>
+    </footer>
+
+    <!-- 键盘提示 -->
+    <div class="fixed bottom-4 right-4 bg-white/90 backdrop-blur shadow-lg rounded-full px-4 py-2 text-xs text-gray-600 border border-gray-200 no-print hidden md:flex items-center gap-3 z-40">
+        <span>Navigate:</span>
+        <div class="flex items-center gap-1">
+            <kbd class="bg-gray-200 px-2 py-1 rounded font-mono">←</kbd>
+            <span>Chapter 1</span>
+        </div>
+        <div class="flex items-center gap-1">
+            <kbd class="bg-gray-200 px-2 py-1 rounded font-mono">→</kbd>
+            <span>Chapter 3</span>
+        </div>
+    </div>
+
+    <script>
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                window.location.href = 'chapter1.html';
+            }
+            if (e.key === 'ArrowRight') {
+                window.location.href = 'chapter3.html';
+            }
+        });
+
+        // 卡片入场动画
+        window.addEventListener('load', () => {
+            const cards = document.querySelectorAll('.type-card, .content-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+
+</body>
+</html>
