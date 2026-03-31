@@ -131,6 +131,28 @@
             border-color: #d4af37;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
+        .lang-column {
+            border-right: 1px solid #e2e8f0;
+            padding-right: 1rem;
+        }
+        .lang-column:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        @media (max-width: 768px) {
+            .lang-column {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding-right: 0;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+            .lang-column:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
         @media print {
             .no-print { display: none !important; }
             body { background: white; }
@@ -165,22 +187,19 @@
     <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
         <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <a href="toc.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <a href="chapter4.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
-                    <span class="hidden sm:inline">Contents / 目录</span>
-                </a>
-                <span class="text-gray-300">|</span>
-                <a href="chapter4.html" class="text-gray-600 hover:text-blue-800 transition-colors text-sm">
-                    ← Ch.4
+                    <span class="hidden sm:inline">← Chapter 4 / Глава 4 / 第4章</span>
+                    <span class="sm:hidden">← 第4章</span>
                 </a>
             </div>
             
             <div class="flex items-center gap-2">
-                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 5 of 5</span>
+                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 5 / Глава 5 / 第5章</span>
                 <a href="references.html" class="nav-pill text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md flex items-center gap-2">
-                    <span>References →</span>
+                    <span>References / Литература / 参考文献 →</span>
                 </a>
             </div>
         </div>
@@ -197,7 +216,7 @@
                 <div class="flex items-center gap-3 mb-4">
                     <span class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-500 text-white flex items-center justify-center font-bold text-xl shadow-lg">5</span>
                     <div class="h-px flex-1 bg-gradient-to-r from-yellow-200 to-transparent max-w-xs"></div>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-bold uppercase tracking-wider">Conclusion</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-bold uppercase tracking-wider">Conclusion / Заключение / 结论</span>
                 </div>
 
                 <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
@@ -211,14 +230,14 @@
                 </div>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">Key Findings</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">Theoretical Contribution</span>
-                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Future Research</span>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">Основные выводы / Key Findings / 核心发现</span>
+                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">Теоретический вклад / Theoretical Contribution / 理论贡献</span>
+                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Будущие исследования / Future Research / 未来研究</span>
                 </div>
             </div>
         </div>
 
-        <!-- 核心发现 -->
+        <!-- 核心发现 - 修复：三语言完整显示 -->
         <section id="findings" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-center gap-3 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center">
@@ -229,23 +248,59 @@
                 <h2 class="text-xl md:text-2xl font-bold text-gray-900">Основные выводы / Key Findings / 核心发现</h2>
             </div>
 
-            <div class="space-y-4 mb-6">
-                <p class="text-gray-700 leading-relaxed text-justify">
-                    Language barriers play a significant role in the expansion of international businesses, affecting multinational companies in numerous ways. As companies attempt to enter new markets, the challenges posed by language differences influence critical aspects such as decision-making, operations, and customer relationships.
-                </p>
-                <p class="text-gray-700 leading-relaxed text-justify serif-sc">
-                    语言障碍在国际商业扩张中扮演着重要角色，以多种方式影响跨国公司。语言不仅仅是沟通工具，更是塑造消费者行为、商业实践和市场期望的文化和社会动态的反映。
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed mb-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                            <span class="font-bold text-blue-900 text-xs uppercase">Русский</span>
+                        </div>
+                        <p class="text-justify mb-3">
+                            Языковые барьеры играют значительную роль в расширении международного бизнеса, влияя на транснациональные компании множеством способов. При попытке выхода на новые рынки проблемы, вызванные языковыми различиями, влияют на критические аспекты, такие как принятие решений, операции и отношения с клиентами.
+                        </p>
+                        <p class="text-justify">
+                            Язык не просто инструмент коммуникации, но отражение культурных и социальных динамик, формирующих поведение потребителей и бизнес-практики.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-green-600 rounded-full"></span>
+                            <span class="font-bold text-green-900 text-xs uppercase">English</span>
+                        </div>
+                        <p class="text-justify mb-3 italic">
+                            Language barriers play a significant role in the expansion of international businesses, affecting multinational companies in numerous ways. As companies attempt to enter new markets, the challenges posed by language differences influence critical aspects such as decision-making, operations, and customer relationships.
+                        </p>
+                        <p class="text-justify italic">
+                            Language is not merely a communication tool but a reflection of the cultural and social dynamics that shape consumer behavior and business practices.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                            <span class="font-bold text-red-900 text-xs uppercase serif-sc">中文</span>
+                        </div>
+                        <p class="text-justify mb-3 serif-sc">
+                            语言障碍在国际商业扩张中扮演着重要角色，以多种方式影响跨国公司。随着公司试图进入新市场，语言差异带来的挑战影响着决策、运营和客户关系等关键方面。
+                        </p>
+                        <p class="text-justify serif-sc">
+                            语言不仅仅是沟通工具，更是塑造消费者行为、商业实践和市场期望的文化和社会动态的反映。
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 主要发现卡片 -->
+            <!-- 主要发现卡片 - 修复：三语言显示 -->
             <div class="grid md:grid-cols-2 gap-4">
                 <div class="finding-card p-4">
                     <div class="flex items-start gap-3">
                         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Strategic Asset Perspective</h4>
-                            <p class="text-sm text-gray-600">Language is not merely a communication tool but a strategic asset that directly impacts business growth and international expansion.</p>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 mb-2 text-sm">Стратегический актив / Strategic Asset / 战略资产视角</h4>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Язык — не просто инструмент коммуникации, но стратегический актив, напрямую влияющий на рост бизнеса.</p>
+                                <p class="italic">Language is not merely a communication tool but a strategic asset that directly impacts business growth.</p>
+                                <p class="serif-sc">语言不仅仅是沟通工具，而是直接影响业务增长的国际扩张战略资产。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,9 +308,13 @@
                 <div class="finding-card p-4">
                     <div class="flex items-start gap-3">
                         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Multifaceted Impact</h4>
-                            <p class="text-sm text-gray-600">Barriers affect market entry, CRM, organizational efficiency, and brand communication simultaneously.</p>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 mb-2 text-sm">Многоаспектное влияние / Multifaceted Impact / 多层面影响</h4>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Барьеры одновременно влияют на выход на рынок, CRM, организационную эффективность и бренд-коммуникацию.</p>
+                                <p class="italic">Barriers affect market entry, CRM, organizational efficiency, and brand communication simultaneously.</p>
+                                <p class="serif-sc">障碍同时影响市场进入、客户关系管理、组织效率和品牌传播。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -263,9 +322,13 @@
                 <div class="finding-card p-4">
                     <div class="flex items-start gap-3">
                         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Mitigation Effectiveness</h4>
-                            <p class="text-sm text-gray-600">Language training, technology, and localization strategies significantly reduce communication barriers.</p>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 mb-2 text-sm">Эффективность смягчения / Mitigation Effectiveness / 缓解有效性</h4>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Языковое обучение, технологии и стратегии локализации значительно снижают коммуникационные барьеры.</p>
+                                <p class="italic">Language training, technology, and localization strategies significantly reduce communication barriers.</p>
+                                <p class="serif-sc">语言培训、技术和本地化策略显著减少沟通障碍。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,16 +336,20 @@
                 <div class="finding-card p-4">
                     <div class="flex items-start gap-3">
                         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Cultural Integration</h4>
-                            <p class="text-sm text-gray-600">Cultural sensitivity is equally crucial as linguistic competence for market success.</p>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 mb-2 text-sm">Культурная интеграция / Cultural Integration / 文化整合</h4>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Культурная чувствительность одинаково важна с лингвистической компетенцией для успеха на рынке.</p>
+                                <p class="italic">Cultural sensitivity is equally crucial as linguistic competence for market success.</p>
+                                <p class="serif-sc">文化敏感性与语言能力对市场成功同样至关重要。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 理论与实践贡献 -->
+        <!-- 理论与实践贡献 - 修复：三语言完整显示 -->
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             
             <!-- 理论贡献 -->
@@ -291,20 +358,32 @@
                     <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
                     </div>
-                    <h3 class="font-bold text-gray-900">Теоретический вклад / 理论贡献</h3>
+                    <h3 class="font-bold text-gray-900">Теоретический вклад / Theoretical Contribution / 理论贡献</h3>
                 </div>
-                <ul class="space-y-2 text-sm text-gray-700">
+                <ul class="space-y-3 text-sm text-gray-700">
                     <li class="flex items-start gap-2">
                         <span class="text-blue-500 mt-1">•</span>
-                        <span>Extends international business theory by positioning language as a strategic asset rather than merely an operational tool</span>
+                        <div>
+                            <p class="text-justify">Расширяет теорию международного бизнеса, позиционируя язык как стратегический актив, а не просто операционный инструмент.</p>
+                            <p class="text-justify italic text-gray-600">Extends international business theory by positioning language as a strategic asset rather than merely an operational tool.</p>
+                            <p class="text-justify serif-sc text-gray-800">扩展国际商务理论，将语言定位为战略资产而非仅仅是运营工具。</p>
+                        </div>
                     </li>
                     <li class="flex items-start gap-2">
                         <span class="text-blue-500 mt-1">•</span>
-                        <span>Develops an integrated framework connecting linguistic barriers with cultural adaptation strategies</span>
+                        <div>
+                            <p class="text-justify">Развивает интегрированную框架, соединяющую языковые барьеры со стратегиями культурной адаптации.</p>
+                            <p class="text-justify italic text-gray-600">Develops an integrated framework connecting linguistic barriers with cultural adaptation strategies.</p>
+                            <p class="text-justify serif-sc text-gray-800">开发整合框架，将语言障碍与文化适应策略相连接。</p>
+                        </div>
                     </li>
                     <li class="flex items-start gap-2">
                         <span class="text-blue-500 mt-1">•</span>
-                        <span>Contributes to cross-cultural communication literature through multinational case analysis</span>
+                        <div>
+                            <p class="text-justify">Вклад в литературу по межкультурной коммуникации через анализ транснациональных кейсов.</p>
+                            <p class="text-justify italic text-gray-600">Contributes to cross-cultural communication literature through multinational case analysis.</p>
+                            <p class="text-justify serif-sc text-gray-800">通过跨国案例分析为跨文化传播文献做出贡献。</p>
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -315,26 +394,38 @@
                     <div class="w-8 h-8 rounded-lg bg-green-100 text-green-700 flex items-center justify-center">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
-                    <h3 class="font-bold text-gray-900">Практическое значение / 实践意义</h3>
+                    <h3 class="font-bold text-gray-900">Практическое значение / Practical Value / 实践意义</h3>
                 </div>
-                <ul class="space-y-2 text-sm text-gray-700">
+                <ul class="space-y-3 text-sm text-gray-700">
                     <li class="flex items-start gap-2">
                         <span class="text-green-500 mt-1">•</span>
-                        <span>Provides actionable strategies for HR (multilingual recruitment) and Marketing (localization)</span>
+                        <div>
+                            <p class="text-justify">Предоставляет практические стратегии для HR (многоязычный набор) и маркетинга (локализация).</p>
+                            <p class="text-justify italic text-gray-600">Provides actionable strategies for HR (multilingual recruitment) and Marketing (localization).</p>
+                            <p class="text-justify serif-sc text-gray-800">为人力资源（多语言招聘）和营销（本地化）提供可操作的策略。</p>
+                        </div>
                     </li>
                     <li class="flex items-start gap-2">
                         <span class="text-green-500 mt-1">•</span>
-                        <span>Offers technology adoption roadmap for AI translation tools</span>
+                        <div>
+                            <p class="text-justify">Предлагает дорожную карту внедрения AI-инструментов перевода.</p>
+                            <p class="text-justify italic text-gray-600">Offers technology adoption roadmap for AI translation tools.</p>
+                            <p class="text-justify serif-sc text-gray-800">提供AI翻译工具的技术采用路线图。</p>
+                        </div>
                     </li>
                     <li class="flex items-start gap-2">
                         <span class="text-green-500 mt-1">•</span>
-                        <span>Guides risk management for brand communication in new markets</span>
+                        <div>
+                            <p class="text-justify">Направляет управление рисками для бренд-коммуникации на новых рынках.</p>
+                            <p class="text-justify italic text-gray-600">Guides risk management for brand communication in new markets.</p>
+                            <p class="text-justify serif-sc text-gray-800">指导新市场中品牌传播的风险管理。</p>
+                        </div>
                     </li>
                 </ul>
             </section>
         </div>
 
-        <!-- 研究局限 -->
+        <!-- 研究局限 - 修复：三语言完整显示 -->
         <section class="limitation-box rounded-xl p-6 mb-6 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center">
@@ -342,23 +433,37 @@
                 </div>
                 <h3 class="font-bold text-gray-900">Ограничения исследования / Limitations / 研究局限</h3>
             </div>
-            <div class="space-y-3 text-sm text-gray-700">
-                <p class="flex items-start gap-2">
-                    <span class="text-orange-500 font-bold">1.</span>
-                    <span>The study primarily focuses on the impact of language barriers from a general perspective, and the sample size of case studies may not fully represent the diversity of global business contexts.</span>
-                </p>
-                <p class="flex items-start gap-2">
-                    <span class="text-orange-500 font-bold">2.</span>
-                    <span>The complexity of cultural differences and the rapidly evolving nature of language technologies pose challenges in providing definitive long-term solutions.</span>
-                </p>
-                <p class="flex items-start gap-2">
-                    <span class="text-orange-500 font-bold">3.</span>
-                    <span>Specific regional or industry-focused granular analysis requires further investigation.</span>
-                </p>
+            <div class="space-y-4 text-sm text-gray-700">
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="flex items-start gap-2">
+                        <span class="text-orange-500 font-bold text-lg">1.</span>
+                        <div>
+                            <p class="text-justify mb-1">Исследование в основном фокусируется на влиянии языковых барьеров с общей перспективы, и размер выборки кейсов может не полностью представлять разнообразие глобальных бизнес-контекстов.</p>
+                            <p class="text-justify mb-1 italic text-gray-600">The study primarily focuses on the impact of language barriers from a general perspective, and the sample size of case studies may not fully represent the diversity of global business contexts.</p>
+                            <p class="text-justify serif-sc text-gray-800">本研究主要从一般角度关注语言障碍的影响，案例研究的样本量可能无法完全代表全球业务环境的多样性。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-orange-500 font-bold text-lg">2.</span>
+                        <div>
+                            <p class="text-justify mb-1">Сложность культурных различий и быстро развивающаяся природа языковых технологий создают проблемы в предоставлении окончательных долгосрочных решений.</p>
+                            <p class="text-justify mb-1 italic text-gray-600">The complexity of cultural differences and the rapidly evolving nature of language technologies pose challenges in providing definitive long-term solutions.</p>
+                            <p class="text-justify serif-sc text-gray-800">文化差异的复杂性和语言技术的快速发展性质给提供明确的长期解决方案带来挑战。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-orange-500 font-bold text-lg">3.</span>
+                        <div>
+                            <p class="text-justify mb-1">Конкретный региональный или отраслевой детальный анализ требует дальнейшего исследования.</p>
+                            <p class="text-justify mb-1 italic text-gray-600">Specific regional or industry-focused granular analysis requires further investigation.</p>
+                            <p class="text-justify serif-sc text-gray-800">针对特定地区或行业的详细分析需要进一步研究。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 未来研究 -->
+        <!-- 未来研究 - 修复：三语言完整显示 -->
         <section class="future-box rounded-xl p-6 mb-8 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center">
@@ -370,67 +475,92 @@
                 <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
                     <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-sky-500"></span>
-                        AI Technology Impact
+                        Влияние AI-технологий / AI Technology Impact / AI技术影响
                     </h4>
-                    <p class="text-xs text-gray-600">Investigate how AI-powered translation tools and real-time communication platforms are transforming the international business landscape</p>
+                    <div class="space-y-1 text-xs text-gray-600">
+                        <p>Исследовать, как инструменты AI-перевода и платформы коммуникации в реальном времени трансформируют международный бизнес.</p>
+                        <p class="italic">Investigate how AI-powered translation tools and real-time communication platforms are transforming the international business landscape.</p>
+                        <p class="serif-sc">调查AI驱动的翻译工具和实时通信平台如何改变国际业务格局。</p>
+                    </div>
                 </div>
                 <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
                     <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-sky-500"></span>
-                        Industry-Specific Studies
+                        Отраслевые исследования / Industry-Specific Studies / 行业特定研究
                     </h4>
-                    <p class="text-xs text-gray-600">Explore more in-depth case studies of companies in specific regions or industries for granular understanding</p>
+                    <div class="space-y-1 text-xs text-gray-600">
+                        <p>Изучить более детальные кейсы компаний в конкретных регионах или отраслях для детального понимания.</p>
+                        <p class="italic">Explore more in-depth case studies of companies in specific regions or industries for granular understanding.</p>
+                        <p class="serif-sc">探索特定地区或行业公司的更深入案例研究，以获得详细理解。</p>
+                    </div>
                 </div>
                 <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
                     <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-sky-500"></span>
-                        Communication Efficiency
+                        Эффективность коммуникации / Communication Efficiency / 沟通效率
                     </h4>
-                    <p class="text-xs text-gray-600">Examine the relationship between language technology adoption and communication efficiency metrics</p>
+                    <div class="space-y-1 text-xs text-gray-600">
+                        <p>Исследовать взаимосвязь между внедрением языковых технологий и метриками эффективности коммуникации.</p>
+                        <p class="italic">Examine the relationship between language technology adoption and communication efficiency metrics.</p>
+                        <p class="serif-sc">检查语言技术采用与沟通效率指标之间的关系。</p>
+                    </div>
                 </div>
                 <div class="bg-white rounded-lg p-4 border border-sky-200 shadow-sm">
                     <h4 class="font-semibold text-sky-900 mb-2 text-sm flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-sky-500"></span>
-                        Cultural Integration
+                        Культурная интеграция / Cultural Integration / 文化整合
                     </h4>
-                    <p class="text-xs text-gray-600">Study the evolving dynamics of language and its role in global economy and market integration</p>
+                    <div class="space-y-1 text-xs text-gray-600">
+                        <p>Изучить эволюционирующую динамику языка и его роль в глобальной экономике и интеграции рынков.</p>
+                        <p class="italic">Study the evolving dynamics of language and its role in global economy and market integration.</p>
+                        <p class="serif-sc">研究语言的动态演变及其在全球经济和市场整合中的作用。</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 最终结论陈述 -->
+        <!-- 最终结论陈述 - 修复：三语言完整显示 -->
         <div class="final-statement rounded-2xl p-8 md:p-10 text-white shadow-2xl mb-8 relative">
-            <div class="relative z-10 text-center max-w-3xl mx-auto">
+            <div class="relative z-10 text-center max-w-4xl mx-auto">
                 <div class="mb-6">
                     <svg class="w-16 h-16 mx-auto text-yellow-400 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
                 
-                <h3 class="text-2xl md:text-3xl font-bold mb-4 italic serif">
-                    "Language is not just a communication tool<br>but a strategic asset"
+                <h3 class="text-2xl md:text-3xl font-bold mb-6 italic serif">
+                    "Язык — не просто инструмент коммуникации,<br>но стратегический актив"
                 </h3>
+                <p class="text-lg md:text-xl opacity-80 mb-4">"Language is not just a communication tool,<br>but a strategic asset"</p>
+                <p class="text-lg md:text-xl opacity-80 serif-sc mb-6">"语言不仅仅是沟通工具，<br>而是战略资产"</p>
                 
                 <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6 rounded-full"></div>
                 
-                <p class="text-lg md:text-xl leading-relaxed opacity-90 mb-4">
-                    Ultimately, this research suggests that language influences decision-making and business success in the global marketplace. By addressing language barriers through integrated strategies—combining human capital development, technological solutions, and deep cultural adaptation—businesses can enhance their global presence and build lasting relationships with customers worldwide.
-                </p>
-                
-                <p class="text-lg serif-sc opacity-90 mt-4">
-                    通过采用这些策略，企业可以克服语言障碍，加强其在全球市场的存在，并与世界各地的客户建立持久的关系。
-                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-sm opacity-90 mb-6">
+                    <p class="text-justify text-base">В конечном итоге, это исследование предполагает, что язык влияет на принятие решений и бизнес-успех на глобальном рынке. Решая языковые барьеры через интегрированные стратегии — сочетая развитие человеческого капитала, технологические решения и глубокую культурную адаптацию — бизнес может усилить свое глобальное присутствие.</p>
+                    <p class="text-justify text-base italic">Ultimately, this research suggests that language influences decision-making and business success in the global marketplace. By addressing language barriers through integrated strategies—combining human capital development, technological solutions, and deep cultural adaptation—businesses can enhance their global presence.</p>
+                    <p class="text-justify text-base serif-sc">最终，本研究表明语言影响全球市场中的决策制定和商业成功。通过整合策略解决语言障碍——结合人力资本开发、技术解决方案和深度文化适应——企业可以增强其全球影响力。</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 text-sm opacity-90 mb-6">
+                    <p class="text-justify">Укрепляя свое глобальное присутствие и строя прочные отношения с клиентами по всему миру.</p>
+                    <p class="text-justify italic">and build lasting relationships with customers worldwide.</p>
+                    <p class="text-justify serif-sc">并与全球客户建立持久的关系。</p>
+                </div>
                 
                 <div class="mt-8 pt-6 border-t border-white/20 text-sm opacity-70">
-                    <p>Чжао Цзе / Zhao Jie / 赵杰</p>
-                    <p class="mt-1">Al-Farabi Kazakh National University, 2024</p>
+                    <div class="grid md:grid-cols-3 gap-2">
+                        <p>Чжао Цзе / Zhao Jie / 赵杰</p>
+                        <p>Al-Farabi Kazakh National University</p>
+                        <p>2024</p>
+                    </div>
                 </div>
             </div>
         </div>
 
     </main>
 
-    <!-- 底部导航 -->
+    <!-- 底部导航 - 修复：三语言显示 -->
     <footer class="max-w-5xl mx-auto px-8 mt-8 mb-12 no-print">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -439,22 +569,22 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     </div>
                     <div class="text-left">
-                        <div class="text-xs text-gray-400 uppercase">Previous</div>
-                        <div class="font-semibold">Chapter 4</div>
-                        <div class="text-xs text-gray-500">Overcoming Strategies</div>
+                        <div class="text-xs text-gray-400 uppercase">Предыдущая / Previous / 上一章</div>
+                        <div class="font-semibold">Chapter 4 / Глава 4 / 第4章</div>
+                        <div class="text-xs text-gray-500">Стратегии преодоления / Overcoming Strategies / 克服策略</div>
                     </div>
                 </a>
 
                 <a href="toc.html" class="flex flex-col items-center text-gray-400 hover:text-blue-800 transition-colors px-8">
                     <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    <span class="text-xs">Table of Contents</span>
+                    <span class="text-xs">Оглавление / Contents / 目录</span>
                 </a>
 
                 <a href="references.html" class="flex items-center gap-3 text-gray-600 hover:text-purple-800 transition-colors group text-right">
                     <div class="text-right">
-                        <div class="text-xs text-gray-400 uppercase">Next</div>
-                        <div class="font-semibold">References</div>
-                        <div class="text-xs text-gray-500">Список литературы</div>
+                        <div class="text-xs text-gray-400 uppercase">Следующая / Next / 下一章</div>
+                        <div class="font-semibold">References / Литература / 参考文献</div>
+                        <div class="text-xs text-gray-500">Список литературы / References / 参考文献</div>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-purple-100 group-hover:bg-purple-200 flex items-center justify-center transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -467,7 +597,7 @@
     <!-- 页脚 -->
     <div class="max-w-5xl mx-auto px-8 text-center text-xs text-gray-400 pb-8">
         <p>© 2024 Чжао Цзе / Zhao Jie / 赵杰 • Al-Farabi Kazakh National University</p>
-        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 5, pp. 12</p>
+        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 5 / Глава 5 / 第5章, pp. 12</p>
     </div>
 
     <script>
