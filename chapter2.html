@@ -159,6 +159,28 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .lang-column {
+            border-right: 1px solid #e2e8f0;
+            padding-right: 1rem;
+        }
+        .lang-column:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        @media (max-width: 768px) {
+            .lang-column {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding-right: 0;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+            .lang-column:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
         @media print {
             .no-print { display: none !important; }
             body { background: white; }
@@ -251,36 +273,57 @@
                     <div class="definition-box p-6 md:p-8 rounded-xl relative mb-6">
                         <span class="quote-mark">"</span>
                         <div class="grid md:grid-cols-3 gap-6 relative z-10">
-                            <div>
-                                <p class="text-sm text-gray-700 leading-relaxed text-justify mb-2">
+                            <!-- 俄语 -->
+                            <div class="lang-column">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                                    <span class="text-xs font-bold text-blue-900 uppercase">Русский</span>
+                                </div>
+                                <p class="text-sm text-gray-800 leading-relaxed text-justify mb-3">
                                     <strong>Языковые барьеры</strong> — это проблемы, возникающие, когда люди или организации не могут эффективно общаться из-за различий в языке.
                                 </p>
-                                <p class="text-xs text-gray-500 mt-2">Эти препятствия могут варьироваться от простых недоразумений до серьезных коммуникационных сбоев, затрагивая как личные, так и деловые взаимодействия.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                    Эти препятствия могут варьироваться от простых недоразумений до серьезных коммуникационных сбоев, затрагивая как личные, так и деловые взаимодействия. Концепция многоаспектна и проявляется в различных формах — от различий в словарном запасе до сложных культурных нюансов, встроенных в использование языка.
+                                </p>
                             </div>
-                            <div>
-                                <p class="text-sm text-gray-700 leading-relaxed text-justify mb-2 italic">
+                            <!-- 英语 -->
+                            <div class="lang-column">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="w-2 h-2 rounded-full bg-green-600"></span>
+                                    <span class="text-xs font-bold text-green-900 uppercase">English</span>
+                                </div>
+                                <p class="text-sm text-gray-800 leading-relaxed text-justify mb-3 italic">
                                     <strong>Language barriers</strong> refer to the challenges that arise when people or organizations cannot effectively communicate due to differences in language.
                                 </p>
-                                <p class="text-xs text-gray-500 mt-2 italic">These obstacles can range from simple misunderstandings to severe communication breakdowns, affecting both personal and business interactions.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed text-justify italic">
+                                    These obstacles can range from simple misunderstandings to severe communication breakdowns, affecting both personal and business interactions. The concept is multifaceted, manifesting in various forms from vocabulary differences to complex cultural nuances embedded in language use.
+                                </p>
                             </div>
-                            <div>
-                                <p class="text-sm text-gray-700 leading-relaxed text-justify mb-2 serif-sc">
+                            <!-- 中文 -->
+                            <div class="lang-column">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="w-2 h-2 rounded-full bg-red-600"></span>
+                                    <span class="text-xs font-bold text-red-900 uppercase serif-sc">中文</span>
+                                </div>
+                                <p class="text-sm text-gray-800 leading-relaxed text-justify mb-2 serif-sc">
                                     <strong>语言障碍</strong>指的是由于语言差异而导致个人或组织无法有效沟通时出现的挑战。
                                 </p>
-                                <p class="text-xs text-gray-500 mt-2 serif-sc">这些障碍可能从简单的误解到严重的沟通中断，影响个人和商业互动。</p>
+                                <p class="text-xs text-gray-600 leading-relaxed text-justify serif-sc">
+                                    这些障碍可能从简单的误解到严重的沟通中断，影响个人和商业互动。该概念是多层面的，可从词汇差异到语言使用中嵌入的复杂文化细微差别等各种形式表现出来。
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-blue-50/50 p-4 rounded-lg border border-blue-100">
-                        <h4 class="font-bold text-blue-900 mb-2 text-sm flex items-center gap-2">
+                        <h4 class="font-bold text-blue-900 mb-4 text-sm flex items-center gap-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                             Ключевая характеристика / Key Characteristic / 关键特征
                         </h4>
                         <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
-                            <p>Концепция многоаспектна и проявляется в различных формах — от различий в словарном запасе до сложных культурных нюансов.</p>
-                            <p class="italic">The concept is multifaceted, manifesting in various forms from vocabulary differences to complex cultural nuances embedded in language use.</p>
-                            <p class="serif-sc">该概念是多层面的，可从词汇差异到语言使用中嵌入的复杂文化细微差别等各种形式表现出来。</p>
+                            <p class="text-justify">Концепция многоаспектна и проявляется в различных формах — от различий в словарном запасе до сложных культурных нюансов.</p>
+                            <p class="text-justify italic">The concept is multifaceted, manifesting in various forms from vocabulary differences to complex cultural nuances embedded in language use.</p>
+                            <p class="text-justify serif-sc">该概念是多层面的，可从词汇差异到语言使用中嵌入的复杂文化细微差别等各种形式表现出来。</p>
                         </div>
                     </div>
                 </div>
@@ -300,69 +343,89 @@
                         <!-- 类型1：语言差异 -->
                         <div class="type-card">
                             <div class="type-icon bg-blue-100 text-blue-600">🌐</div>
-                            <h3 class="font-bold text-gray-900 mb-2">1. Лингвистические различия</h3>
-                            <p class="text-sm text-gray-600 italic mb-1">Linguistic Differences / 语言差异</p>
-                            <p class="text-sm text-gray-700 text-justify">
-                                Различные языки (английский vs мандарин, русский vs арабский) создают фундаментальные коммуникационные разрывы. Наиболее очевидная форма барьера, особенно критичная при работе в регионах, где родной язык компании не распространен.
-                            </p>
+                            <h3 class="font-bold text-gray-900 mb-1">1. Лингвистические различия</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Linguistic Differences</p>
+                            <p class="text-sm text-gray-600 serif-sc mb-3">语言差异</p>
+                            
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <p class="text-justify">Различные языки (английский vs мандарин, русский vs арабский) создают фундаментальные коммуникационные разрывы. Наиболее очевидная форма барьера, особенно критичная при работе в регионах, где родной язык компании не распространен.</p>
+                                <p class="text-justify italic text-gray-600">Different languages (English vs Mandarin, Russian vs Arabic) create fundamental communication gaps. The most obvious form of barrier, especially critical when operating in regions where the company's native language is not prevalent.</p>
+                                <p class="text-justify serif-sc text-gray-800">不同的语言（英语vs普通话，俄语vs阿拉伯语）造成了根本性的沟通鸿沟。这是最明显的障碍形式，特别是在公司母语不普及的地区开展业务时尤为关键。</p>
+                            </div>
+                            
                             <div class="mt-3 flex flex-wrap gap-1">
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">English vs Mandarin</span>
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Russian vs Arabic</span>
+                                <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">English vs Mandarin</span>
+                                <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Russian vs Arabic</span>
                             </div>
                         </div>
 
                         <!-- 类型2：方言变异 -->
                         <div class="type-card">
                             <div class="type-icon bg-green-100 text-green-600">🗣️</div>
-                            <h3 class="font-bold text-gray-900 mb-2">2. Диалектные вариации</h3>
-                            <p class="text-sm text-gray-600 italic mb-1">Dialectal Variations / 方言变异</p>
-                            <p class="text-sm text-gray-700 text-justify">
-                                Даже внутри одного языка региональные вариации и акценты могут вызывать путаницу или неверную интерпретацию. Например, британский и американский английский, северный и южный китайский (путунхуа vs кантонский).
-                            </p>
+                            <h3 class="font-bold text-gray-900 mb-1">2. Диалектные вариации</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Dialectal Variations</p>
+                            <p class="text-sm text-gray-600 serif-sc mb-3">方言变异</p>
+                            
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <p class="text-justify">Даже внутри одного языка региональные вариации и акценты могут вызывать путаницу или неверную интерпретацию. Например, британский и американский английский, северный и южный китайский (путунхуа vs кантонский).</p>
+                                <p class="text-justify italic text-gray-600">Even within the same language, regional variations and accents can cause confusion or misinterpretation. For example, British and American English, Northern and Southern Chinese (Putonghua vs Cantonese).</p>
+                                <p class="text-justify serif-sc text-gray-800">即使在同一种语言内部，地区差异和口音也可能造成混淆或误解。例如，英式英语与美式英语，中国北方话与南方话（普通话vs粤语）。</p>
+                            </div>
+                            
                             <div class="mt-3 flex flex-wrap gap-1">
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">British vs American</span>
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Putonghua vs Cantonese</span>
+                                <span class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">British vs American</span>
+                                <span class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Putonghua vs Cantonese</span>
                             </div>
                         </div>
 
                         <!-- 类型3：技术术语 -->
                         <div class="type-card">
                             <div class="type-icon bg-purple-100 text-purple-600">⚙️</div>
-                            <h3 class="font-bold text-gray-900 mb-2">3. Технический жаргон</h3>
-                            <p class="text-sm text-gray-600 italic mb-1">Technical Jargon / 技术术语</p>
-                            <p class="text-sm text-gray-700 text-justify">
-                                Специализированная терминология, часто используемая в профессиональных или отраслевых контекстах, может создавать особые барьеры, так как специфические термины не имеют прямых эквивалентов в других языках.
-                            </p>
+                            <h3 class="font-bold text-gray-900 mb-1">3. Технический жаргон</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Technical Jargon</p>
+                            <p class="text-sm text-gray-600 serif-sc mb-3">技术术语</p>
+                            
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <p class="text-justify">Специализированная терминология, часто используемая в профессиональных или отраслевых контекстах, может создавать особые барьеры, так как специфические термины не имеют прямых эквивалентов в других языках.</p>
+                                <p class="text-justify italic text-gray-600">Specialized terminology, often used in professional or industry contexts, can create particular barriers as specific terms may not have direct equivalents in other languages.</p>
+                                <p class="text-justify serif-sc text-gray-800">专业术语，通常在专业或行业环境中使用，可能造成特殊的障碍，因为特定术语在其他语言中可能没有直接对应的词汇。</p>
+                            </div>
+                            
                             <div class="mt-3 flex flex-wrap gap-1">
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Legal terms</span>
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Medical terminology</span>
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Industry slang</span>
+                                <span class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded border border-purple-100">Legal terms</span>
+                                <span class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded border border-purple-100">Medical terminology</span>
+                                <span class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded border border-purple-100">Industry slang</span>
                             </div>
                         </div>
 
                         <!-- 类型4：非语言沟通 -->
                         <div class="type-card">
                             <div class="type-icon bg-orange-100 text-orange-600">🤝</div>
-                            <h3 class="font-bold text-gray-900 mb-2">4. Невербальная коммуникация</h3>
-                            <p class="text-sm text-gray-600 italic mb-1">Non-verbal Communication / 非语言沟通</p>
-                            <p class="text-sm text-gray-700 text-justify">
-                                Язык тела, жесты, мимика и выражение лица различаются драматически между культурами и могут привести к недоразумениям при неправильной интерпретации. Например, знак "OK" имеет разное значение в разных странах.
-                            </p>
+                            <h3 class="font-bold text-gray-900 mb-1">4. Невербальная коммуникация</h3>
+                            <p class="text-sm text-gray-600 italic mb-1">Non-verbal Communication</p>
+                            <p class="text-sm text-gray-600 serif-sc mb-3">非语言沟通</p>
+                            
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <p class="text-justify">Язык тела, жесты, мимика и выражение лица различаются драматически между культурами и могут привести к недоразумениям при неправильной интерпретации. Например, знак "OK" имеет разное значение в разных странах.</p>
+                                <p class="text-justify italic text-gray-600">Body language, gestures, facial expressions, and eye contact vary dramatically between cultures and can lead to misunderstandings when misinterpreted. For example, the "OK" sign has different meanings in different countries.</p>
+                                <p class="text-justify serif-sc text-gray-800">肢体语言、手势、面部表情和眼神交流在不同文化间差异巨大，如果被误解可能导致沟通障碍。例如，"OK"手势在不同国家具有不同的含义。</p>
+                            </div>
+                            
                             <div class="mt-3 flex flex-wrap gap-1">
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Body language</span>
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Eye contact</span>
-                                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Personal space</span>
+                                <span class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded border border-orange-100">Body language</span>
+                                <span class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded border border-orange-100">Eye contact</span>
+                                <span class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded border border-orange-100">Personal space</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-6 bg-purple-50 p-4 rounded-lg border border-purple-100">
-                        <p class="text-sm text-gray-700 text-center italic">
-                            <strong>Взаимосвязь типов:</strong> Эти виды языковых барьеров могут пересекаться и усиливать друг друга, создавая более сложные проблемы в межкультурной коммуникации.
-                        </p>
-                        <p class="text-xs text-center text-gray-500 mt-2 serif-sc">
-                            这些类型的语言障碍可能交叉并相互加剧，导致更复杂的跨文化沟通问题
-                        </p>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+                            <p class="text-center"><strong>Взаимосвязь типов:</strong> Эти виды языковых барьеров могут пересекаться и усиливать друг друга.</p>
+                            <p class="text-center italic"><strong>Interconnection:</strong> These types of language barriers may intersect and intensify each other.</p>
+                            <p class="text-center serif-sc"><strong>类型相互关联：</strong>这些语言障碍类型可能交叉并相互加剧。</p>
+                        </div>
+                        <p class="text-xs text-center text-gray-500 mt-2 serif-sc">创造更复杂的跨文化沟通问题</p>
                     </div>
                 </div>
             </section>
@@ -379,57 +442,101 @@
 
                     <div class="culture-connection p-6 rounded-lg mb-6">
                         <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <h4 class="font-bold text-amber-900 mb-2 text-sm uppercase">Взаимосвязь</h4>
+                            <div class="lang-column">
+                                <h4 class="font-bold text-amber-900 mb-3 text-sm uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full"></span>
+                                    Взаимосвязь
+                                </h4>
                                 <p class="text-sm text-gray-800 leading-relaxed text-justify">
                                     Языковые барьеры тесно связаны с культурными различиями. Язык сам по себе является отражением более глубоких культурных различий, часто отражая и усиливая культурные различия.
                                 </p>
+                                <p class="text-xs text-gray-600 mt-2">
+                                    Культурные ценности, мировоззрение и социальные нормы встроены в языковые структуры, что делает язык не просто средством общения, а ключом к пониманию культуры.
+                                </p>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-amber-900 mb-2 text-sm uppercase italic">Reflection</h4>
+                            <div class="lang-column">
+                                <h4 class="font-bold text-amber-900 mb-3 text-sm uppercase italic flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full"></span>
+                                    Reflection
+                                </h4>
                                 <p class="text-sm text-gray-800 leading-relaxed text-justify italic">
                                     Language barriers are closely related to cultural differences. Language itself is a reflection of deeper cultural distinctions, often mirroring and intensifying cultural disparities.
                                 </p>
+                                <p class="text-xs text-gray-600 mt-2 italic">
+                                    Cultural values, worldview, and social norms are embedded in linguistic structures, making language not just a communication tool, but a key to understanding culture.
+                                </p>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-amber-900 mb-2 text-sm uppercase serif-sc">文化反映</h4>
+                            <div class="lang-column">
+                                <h4 class="font-bold text-amber-900 mb-3 text-sm uppercase serif-sc flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full"></span>
+                                    文化反映
+                                </h4>
                                 <p class="text-sm text-gray-800 leading-relaxed text-justify serif-sc">
                                     语言障碍与文化差异密切相关。语言本身是更深层次文化区别的反映，常常体现并强化文化差异。
+                                </p>
+                                <p class="text-xs text-gray-600 mt-2 serif-sc">
+                                    文化价值观、世界观和社会规范嵌入在语言结构中，使语言不仅仅是沟通工具，更是理解文化的钥匙。
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
+                        <!-- 文化陷阱案例 -->
                         <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-                            <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2 text-sm">
+                            <h4 class="font-bold text-gray-800 mb-4 flex items-center gap-2 text-sm border-b border-gray-100 pb-2">
                                 <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xs">⚠️</span>
-                                Примеры культурных ловушек / Cultural Traps / 文化陷阱案例
+                                <span>Примеры культурных ловушек / Cultural Traps / 文化陷阱案例</span>
                             </h4>
-                            <ul class="space-y-2 text-sm text-gray-700">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-amber-500 mt-1">•</span>
-                                    <span><strong>Прямота vs намек:</strong> Западные культуры ценят прямоту, тогда как восточные предпочитают намеки и вежливость</span>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="bg-gray-50 p-2 rounded">
+                                    <div class="flex items-start gap-2 mb-1">
+                                        <span class="text-amber-500 font-bold">•</span>
+                                        <span class="font-bold text-gray-800">Прямота vs намек / Directness vs Implicitness</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 italic ml-4 mb-1">Western cultures value directness, while Eastern cultures prefer hints and politeness.</p>
+                                    <p class="text-xs text-gray-700 serif-sc ml-4">西方文化重视直接表达，而东方文化更倾向于暗示和礼貌。</p>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-amber-500 mt-1">•</span>
-                                    <span><strong>Контекст:</strong> Высококонтекстуальные культуры (Япония, арабский мир) vs низкоконтекстуальные (США, Германия)</span>
+                                <li class="bg-gray-50 p-2 rounded">
+                                    <div class="flex items-start gap-2 mb-1">
+                                        <span class="text-amber-500 font-bold">•</span>
+                                        <span class="font-bold text-gray-800">Контекст / Context / 语境</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 italic ml-4 mb-1">High-context cultures (Japan, Arab world) vs low-context cultures (USA, Germany).</p>
+                                    <p class="text-xs text-gray-700 serif-sc ml-4">高语境文化（日本、阿拉伯世界）vs 低语境文化（美国、德国）。</p>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-amber-500 mt-1">•</span>
-                                    <span class="serif-sc"><strong>时间观念：</strong>单一时间文化（准时）vs 多重时间文化（灵活）</span>
+                                <li class="bg-gray-50 p-2 rounded">
+                                    <div class="flex items-start gap-2 mb-1">
+                                        <span class="text-amber-500 font-bold">•</span>
+                                        <span class="font-bold text-gray-800">Время / Time / 时间观念</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 italic ml-4 mb-1">Monochronic cultures (punctuality) vs polychronic cultures (flexibility).</p>
+                                    <p class="text-xs text-gray-700 serif-sc ml-4">单一时间文化（准时）vs 多重时间文化（灵活）。</p>
                                 </li>
                             </ul>
                         </div>
 
+                        <!-- 核心观点 -->
                         <div class="bg-gradient-to-br from-orange-50 to-white p-4 rounded-lg border border-orange-200">
-                            <h4 class="font-bold text-orange-900 mb-3 text-sm uppercase">Ключевой вывод / Key Insight / 核心观点</h4>
-                            <p class="text-sm text-gray-800 leading-relaxed italic mb-2">
-                                "Overcoming language barriers is not only about learning new words or grammar rules but also about gaining cultural awareness and understanding the underlying social contexts that shape communication practices."
-                            </p>
-                            <p class="text-sm text-gray-700 serif-sc border-t border-orange-200 pt-2 mt-2">
-                                克服语言障碍不仅是学习新单词或语法规则，还包括获得文化意识，理解塑造沟通实践的潜在社会背景。
-                            </p>
+                            <h4 class="font-bold text-orange-900 mb-3 text-sm uppercase flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                Ключевой вывод / Key Insight / 核心观点
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="bg-white/70 p-3 rounded border-l-4 border-orange-400">
+                                    <p class="text-sm text-gray-800 italic leading-relaxed">
+                                        "Overcoming language barriers is not only about learning new words or grammar rules but also about gaining cultural awareness and understanding the underlying social contexts that shape communication practices."
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div class="bg-white/50 p-2 rounded">
+                                        <p class="text-gray-700">Преодоление языковых барьеров требует не только лингвистических знаний, но и культурной осведомленности.</p>
+                                    </div>
+                                    <div class="bg-white/50 p-2 rounded">
+                                        <p class="text-gray-700 serif-sc">克服语言障碍不仅需要语言知识，还需要文化意识和理解塑造沟通实践的潜在社会背景。</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -446,22 +553,40 @@
                     </h2>
                     
                     <div class="grid md:grid-cols-3 gap-4 text-sm">
-                        <div class="bg-white p-3 rounded border border-green-100">
-                            <p class="text-gray-700">Глава определила языковые барьеры как многоаспектные препятствия эффективной коммуникации, классифицированные по четырем типам.</p>
+                        <div class="bg-white p-4 rounded border border-green-100 shadow-sm">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                                <span class="font-bold text-blue-900 text-xs uppercase">Русский</span>
+                            </div>
+                            <p class="text-gray-700 text-justify">Глава определила языковые барьеры как многоаспектные препятствия эффективной коммуникации, классифицированные по четырем типам: лингвистические различия, диалектные вариации, технический жаргон и невербальная коммуникация. Показана тесная связь языка с культурой.</p>
                         </div>
-                        <div class="bg-white p-3 rounded border border-green-100">
-                            <p class="text-gray-700 italic">This chapter defined language barriers as multifaceted obstacles to effective communication, classified into four main types: linguistic, dialectal, technical, and non-verbal.</p>
+                        <div class="bg-white p-4 rounded border border-green-100 shadow-sm">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-2 h-2 bg-green-600 rounded-full"></span>
+                                <span class="font-bold text-green-900 text-xs uppercase">English</span>
+                            </div>
+                            <p class="text-gray-700 text-justify italic">This chapter defined language barriers as multifaceted obstacles to effective communication, classified into four main types: linguistic differences, dialectal variations, technical jargon, and non-verbal communication. The close relationship between language and culture was demonstrated.</p>
                         </div>
-                        <div class="bg-white p-3 rounded border border-green-100">
-                            <p class="text-gray-700 serif-sc">本章将语言障碍定义为有效沟通的多层面障碍，并将其分为四种类型：语言差异、方言变异、技术术语和非语言沟通问题。</p>
+                        <div class="bg-white p-4 rounded border border-green-100 shadow-sm">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                                <span class="font-bold text-red-900 text-xs uppercase serif-sc">中文</span>
+                            </div>
+                            <p class="text-gray-700 text-justify serif-sc">本章将语言障碍定义为有效沟通的多层面障碍，并将其分为四种类型：语言差异、方言变异、技术术语和非语言沟通问题。同时展示了语言与文化之间的密切关系。</p>
                         </div>
                     </div>
                     
-                    <div class="mt-4 text-center">
-                        <span class="inline-flex items-center gap-2 text-xs text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                            Следующая глава: Влияние на расширение рынков / Next: Market Impact / 下一章：市场影响分析
-                        </span>
+                    <div class="mt-6 text-center">
+                        <div class="inline-flex flex-col md:flex-row items-center gap-2 text-xs text-green-700 bg-green-100 px-4 py-2 rounded-full border border-green-200">
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                                <span>Следующая глава: Влияние на расширение рынков</span>
+                            </span>
+                            <span class="hidden md:inline text-green-500">|</span>
+                            <span class="italic">Next: Market Impact Analysis</span>
+                            <span class="hidden md:inline text-green-500">|</span>
+                            <span class="serif-sc">下一章：市场影响分析</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -474,7 +599,7 @@
                 <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/>
                 </svg>
-                <span>← Chapter 1 / 第1章</span>
+                <span>← Chapter 1 / Глава 1 / 第1章</span>
             </a>
             
             <div class="text-center text-xs text-gray-400">
@@ -485,7 +610,7 @@
             </div>
 
             <a href="chapter3.html" class="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full shadow-md hover:bg-purple-700 transition-all group">
-                <span>Chapter 3 / 第3章 →</span>
+                <span>Chapter 3 / Глава 3 / 第3章 →</span>
                 <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
