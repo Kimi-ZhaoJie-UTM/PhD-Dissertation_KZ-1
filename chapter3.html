@@ -105,6 +105,28 @@
             top: -0.5rem;
             left: 1rem;
         }
+        .lang-column {
+            border-right: 1px solid #e2e8f0;
+            padding-right: 1rem;
+        }
+        .lang-column:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        @media (max-width: 768px) {
+            .lang-column {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding-right: 0;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+            .lang-column:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
         @media print {
             .no-print { display: none !important; }
             body { background: white; }
@@ -139,22 +161,19 @@
     <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
         <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <a href="toc.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
+                <a href="chapter2.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
                     <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
-                    <span class="hidden sm:inline">Contents / 目录</span>
-                </a>
-                <span class="text-gray-300">|</span>
-                <a href="chapter2.html" class="text-gray-600 hover:text-blue-800 transition-colors text-sm">
-                    ← Ch.2
+                    <span class="hidden sm:inline">← Chapter 2 / Глава 2 / 第2章</span>
+                    <span class="sm:hidden">← 第2章</span>
                 </a>
             </div>
             
             <div class="flex items-center gap-2">
-                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 3 of 5</span>
+                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 3 / Глава 3 / 第3章</span>
                 <a href="chapter4.html" class="nav-pill text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md flex items-center gap-2">
-                    <span>Ch.4 →</span>
+                    <span>Chapter 4 / Глава 4 / 第4章 →</span>
                 </a>
             </div>
         </div>
@@ -184,252 +203,443 @@
                 </div>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="px-3 py-1 bg-red-50 text-red-700 rounded-full text-xs font-medium border border-red-100">Market Entry</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">CRM</span>
-                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Organizational Communication</span>
-                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">Brand Strategy</span>
+                    <span class="px-3 py-1 bg-red-50 text-red-700 rounded-full text-xs font-medium border border-red-100">Выход на рынок / Market Entry / 市场进入</span>
+                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">CRM / CRM / 客户关系</span>
+                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Коммуникация / Communication / 组织沟通</span>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">Бренд / Brand / 品牌战略</span>
                 </div>
             </div>
         </div>
 
-        <!-- 章节概述 -->
+        <!-- 章节概述 - 修复：三语言完整显示 -->
         <div class="bg-blue-50 border-l-4 border-blue-600 rounded-r-lg p-6 mb-8 shadow-sm">
-            <p class="text-gray-800 leading-relaxed italic">
-                <strong>Overview:</strong> This chapter examines how language barriers create significant obstacles across four critical dimensions of international business expansion: market entry strategies, customer relationship management, internal organizational communication, and brand communication. Through analysis of multinational corporations including Coca-Cola, McDonald's, Volkswagen, Nike, and H&M, this section demonstrates the tangible consequences of linguistic misalignment in global markets.
-            </p>
+            <h3 class="font-bold text-blue-900 mb-4 flex items-center gap-2 text-sm uppercase">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Обзор главы / Chapter Overview / 章节概述
+            </h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="lang-column">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                        <span class="font-bold text-blue-900 text-xs uppercase">Русский</span>
+                    </div>
+                    <p class="text-gray-800 leading-relaxed text-justify">
+                        Эта глава исследует, как языковые барьеры создают значительные препятствия в четырех критических измерениях международного расширения бизнеса: стратегии выхода на рынок, управление отношениями с клиентами, внутренняя организационная коммуникация и коммуникация бренда. Через анализ транснациональных корпораций, включая Coca-Cola, McDonald's, Volkswagen, Nike и H&M, демонстрируются ощутимые последствия лингвистического несоответствия на глобальных рынках.
+                    </p>
+                </div>
+                <div class="lang-column">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-green-600 rounded-full"></span>
+                        <span class="font-bold text-green-900 text-xs uppercase">English</span>
+                    </div>
+                    <p class="text-gray-800 leading-relaxed text-justify italic">
+                        This chapter examines how language barriers create significant obstacles across four critical dimensions of international business expansion: market entry strategies, customer relationship management, internal organizational communication, and brand communication. Through analysis of multinational corporations including Coca-Cola, McDonald's, Volkswagen, Nike, and H&M, this section demonstrates the tangible consequences of linguistic misalignment in global markets.
+                    </p>
+                </div>
+                <div class="lang-column">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                        <span class="font-bold text-red-900 text-xs uppercase serif-sc">中文</span>
+                    </div>
+                    <p class="text-gray-800 leading-relaxed text-justify serif-sc">
+                        本章探讨了语言障碍如何在国际业务扩张的四个关键维度上造成重大障碍：市场进入策略、客户关系管理、内部组织沟通和品牌传播。通过对可口可乐、麦当劳、大众汽车、耐克和H&M等跨国公司的分析，本节展示了语言错位在全球市场中的具体后果。
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- 第1节：市场进入挑战 -->
+        <!-- 第1节：市场进入挑战 - 修复：三语言完整显示 -->
         <section id="market-entry" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-bold text-lg flex-shrink-0">3.1</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Проблемы выхода на рынок</h2>
-                    <p class="text-gray-600 italic">Market Entry Challenges | 市场进入挑战</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Проблемы выхода на рынок</h2>
+                    <p class="text-gray-600 italic text-sm">Market Entry Challenges</p>
+                    <p class="text-gray-600 serif-sc text-sm">市场进入挑战</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 mb-6">
-                <p class="text-justify">
-                    Language barriers present significant obstacles to companies seeking to expand into new international markets. One of the primary challenges is market entry, where language can directly affect a company's ability to position itself in a new region, adapt its marketing strategies, and effectively communicate with local customers.
-                </p>
-                <p class="text-justify">
-                    Language barriers can hinder a company's understanding of local consumer preferences, needs, and behaviors, which are crucial for tailoring products or services to the target market. For example, if a company fails to adapt its marketing materials to the local language or cultural context, it may struggle to connect with potential customers. Moreover, failure to translate promotional content accurately can result in miscommunication or even damage the company's reputation.
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify mb-3">
+                            Языковые барьеры представляют значительные препятствия для компаний, стремящихся расшириться на новые международные рынки. Одной из основных проблем является выход на рынок, где язык может напрямую влиять на способность компании позиционировать себя в новом регионе, адаптировать свои маркетинговые стратегии и эффективно общаться с местными клиентами.
+                        </p>
+                        <p class="text-justify text-gray-600">
+                            Языковые барьеры могут препятствовать пониманию компанией местных потребительских предпочтений, потребностей и поведения, что критически важно для адаптации продуктов или услуг к целевому рынку.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 italic">
+                            Language barriers present significant obstacles to companies seeking to expand into new international markets. One of the primary challenges is market entry, where language can directly affect a company's ability to position itself in a new region, adapt its marketing strategies, and effectively communicate with local customers.
+                        </p>
+                        <p class="text-justify text-gray-600 italic">
+                            Language barriers can hinder a company's understanding of local consumer preferences, needs, and behaviors, which are crucial for tailoring products or services to the target market.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 serif-sc">
+                            语言障碍对寻求向新的国际市场扩张的公司构成了重大障碍。主要挑战之一是市场进入，语言可以直接影响公司在新地区定位自己的能力、调整其营销策略以及与当地客户有效沟通的能力。
+                        </p>
+                        <p class="text-justify text-gray-600 serif-sc">
+                            语言障碍可能阻碍公司对当地消费者偏好、需求和行为的理解，而这些对于针对目标市场定制产品或服务至关重要。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg mt-4">
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <p class="text-red-900 text-justify">Например, если компания не адаптирует свои маркетинговые материалы к местному языку или культурному контексту, она может столкнуться с трудностями в установлении связи с потенциальными клиентами.</p>
+                        <p class="text-red-900 text-justify italic">For example, if a company fails to adapt its marketing materials to the local language or cultural context, it may struggle to connect with potential customers.</p>
+                        <p class="text-red-900 text-justify serif-sc">例如，如果公司未能将其营销材料适应当地语言或文化背景，则可能难以与潜在客户建立联系。</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 案例：PepsiCo & McDonald's -->
+            <!-- 案例：PepsiCo & McDonald's - 修复：三语言显示 -->
             <div class="case-study case-mcdonalds bg-yellow-50 border border-yellow-200 p-6 rounded-lg mt-6 relative">
                 <div class="case-badge bg-yellow-100 text-yellow-800 mb-3">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h2a1 1 0 100-2H6V7h5a1 1 0 011 1v5h2V8a3 3 0 00-3-3H6z" clip-rule="evenodd"/></svg>
-                    Case Study
+                    Case Study / Кейс / 案例研究
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2 text-lg">PepsiCo & McDonald's Marketing Localization</h3>
-                <div class="grid md:grid-cols-2 gap-4">
+                <h3 class="font-bold text-gray-900 mb-4 text-lg">PepsiCo & McDonald's: Локализация маркетинга / Marketing Localization / 营销本地化</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
                     <div>
-                        <p class="text-sm text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed text-justify mb-3">
+                            Глобальное расширение таких компаний, как <strong>PepsiCo</strong> и <strong>McDonald's</strong>, сталкивалось с проблемами локализации маркетинговых сообщений на зарубежных рынках. В некоторых случаях переводы слоганов или названий продуктов приводили к неловким ситуациям, когда смысл сообщений терялся или искажался, негативно влияя на восприятие бренда.
+                        </p>
+                        <div class="bg-white p-3 rounded border border-yellow-300/50">
+                            <p class="text-xs text-yellow-800 font-semibold mb-1">Последствия:</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Повреждение имиджа бренда</li>
+                                <li>• Задержки выхода на рынок</li>
+                                <li>• Дорогостоящие ребрендинги</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 leading-relaxed text-justify mb-3 italic">
                             Global expansion of companies like <strong>PepsiCo</strong> and <strong>McDonald's</strong> has faced challenges in localizing their marketing messages in foreign markets. In some instances, translations of slogans or product names have led to embarrassing situations, where the meaning of their messages was lost or misinterpreted, negatively affecting brand perception.
                         </p>
+                        <div class="bg-white p-3 rounded border border-yellow-300/50">
+                            <p class="text-xs text-yellow-800 font-semibold mb-1">Impact Analysis:</p>
+                            <ul class="text-xs text-gray-600 space-y-1 italic">
+                                <li>• Slogan mistranslation damage</li>
+                                <li>• Market entry delays</li>
+                                <li>• Costly rebranding efforts</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded border border-yellow-300/50">
-                        <p class="text-xs text-yellow-800 font-semibold mb-1">Impact Analysis:</p>
-                        <ul class="text-xs text-gray-600 space-y-1 list-disc list-inside">
-                            <li>Slogan mistranslation damage</li>
-                            <li>Brand perception decline</li>
-                            <li>Market entry delays</li>
-                            <li>Costly rebranding efforts</li>
-                        </ul>
+                    <div>
+                        <p class="text-gray-700 leading-relaxed text-justify mb-3 serif-sc">
+                            <strong>百事可乐</strong>和<strong>麦当劳</strong>等公司的全球扩张在将营销信息本地化到外国市场时面临挑战。在某些情况下，口号或产品名称的翻译导致了尴尬的情况，信息的含义丢失或被误解，对品牌形象产生负面影响。
+                        </p>
+                        <div class="bg-white p-3 rounded border border-yellow-300/50">
+                            <p class="text-xs text-yellow-800 font-semibold mb-1 serif-sc">影响分析：</p>
+                            <ul class="text-xs text-gray-600 space-y-1 serif-sc">
+                                <li>• 口号误译损害</li>
+                                <li>• 市场进入延迟</li>
+                                <li>• 昂贵的重塑品牌努力</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 第2节：客户关系管理 -->
+        <!-- 第2节：客户关系管理 - 修复：三语言完整显示 -->
         <section id="crm" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg flex-shrink-0">3.2</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Управление отношениями с клиентами</h2>
-                    <p class="text-gray-600 italic">Customer Relationship Management | 客户关系管理</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Управление отношениями с клиентами</h2>
+                    <p class="text-gray-600 italic text-sm">Customer Relationship Management</p>
+                    <p class="text-gray-600 serif-sc text-sm">客户关系管理</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4">
-                <p class="text-justify">
-                    Similarly, customer relationship management is another area where language barriers can have a profound impact. In a multilingual and multicultural environment, providing high-quality customer service becomes more challenging.
-                </p>
-                <p class="text-justify">
-                    Customers may experience frustration when they cannot communicate effectively with service representatives or when support is unavailable in their preferred language. This frustration can lead to a decline in customer loyalty, as consumers are less likely to remain loyal to brands that do not meet their linguistic or cultural expectations.
-                </p>
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg my-4">
-                    <p class="text-sm text-blue-900 italic">
-                        "Companies must invest in hiring multilingual staff, providing language training, and implementing multilingual customer support systems to mitigate these issues."
-                    </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify mb-3">
+                            Аналогично, управление отношениями с клиентами — еще одна область, где языковые барьеры могут оказывать глубокое влияние. В многоязычной и мультикультурной среде предоставление высококачественного обслуживания клиентов становится более сложной задачей.
+                        </p>
+                        <p class="text-justify">
+                            Клиенты могут испытывать разочарование, когда они не могут эффективно общаться с представителями службы поддержки или когда поддержка недоступна на их предпочитаемом языке. Это разочарование может привести к снижению лояльности клиентов.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 italic">
+                            Similarly, customer relationship management is another area where language barriers can have a profound impact. In a multilingual and multicultural environment, providing high-quality customer service becomes more challenging.
+                        </p>
+                        <p class="text-justify italic">
+                            Customers may experience frustration when they cannot communicate effectively with service representatives or when support is unavailable in their preferred language. This frustration can lead to a decline in customer loyalty.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 serif-sc">
+                            同样，客户关系管理是语言障碍可能产生深远影响的另一个领域。在多语言和多文化环境中，提供高质量的客户服务变得更加具有挑战性。
+                        </p>
+                        <p class="text-justify serif-sc">
+                            当客户无法与服务代表有效沟通，或者支持服务无法以其首选语言提供时，客户可能会感到沮丧。这种沮丧可能导致客户忠诚度下降。
+                        </p>
+                    </div>
                 </div>
-                <p class="text-justify">
-                    Furthermore, adopting culturally sensitive communication strategies is essential to ensure that customers feel understood and valued, fostering stronger, long-term relationships.
-                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg my-4">
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <p class="text-blue-900 font-semibold text-justify">"Компании должны инвестировать в найм многоязычного персонала, обучение языкам и внедрение многоязычных систем поддержки клиентов."</p>
+                        <p class="text-blue-900 font-semibold text-justify italic">"Companies must invest in hiring multilingual staff, providing language training, and implementing multilingual customer support systems."</p>
+                        <p class="text-blue-900 font-semibold text-justify serif-sc">"公司必须投资于招聘多语言员工、提供语言培训以及实施多语言客户支持系统。"</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <p class="text-justify">Кроме того, принятие культурно чувствительных стратегий коммуникации необходимо для обеспечения того, чтобы клиенты чувствовали себя понятыми и ценными.</p>
+                    <p class="text-justify italic">Furthermore, adopting culturally sensitive communication strategies is essential to ensure that customers feel understood and valued.</p>
+                    <p class="text-justify serif-sc">此外，采用具有文化敏感性的沟通策略对于确保客户感到被理解和重视至关重要。</p>
+                </div>
             </div>
         </section>
 
-        <!-- 第3节：组织沟通 -->
+        <!-- 第3节：组织沟通 - 修复：三语言完整显示 -->
         <section id="organizational" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-green-100 text-green-700 flex items-center justify-center font-bold text-lg flex-shrink-0">3.3</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Организационное общение и сотрудничество</h2>
-                    <p class="text-gray-600 italic">Organizational Communication | 组织沟通与协作</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Организационное общение</h2>
+                    <p class="text-gray-600 italic text-sm">Organizational Communication</p>
+                    <p class="text-gray-600 serif-sc text-sm">组织沟通与协作</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 mb-6">
-                <p class="text-justify">
-                    In terms of organizational communication and collaboration, language barriers within multinational corporations can impede team dynamics and decision-making processes. When teams from different countries are involved in cross-border projects, differences in language and communication styles can create misunderstandings, delays, and inefficiencies.
-                </p>
-                <p class="text-justify">
-                    For instance, a project team composed of members from different linguistic backgrounds may struggle to coordinate their efforts if there is no common language proficiency or if language barriers limit the exchange of ideas. In such cases, important information may be miscommunicated, leading to mistakes or delays.
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed mb-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify mb-3">
+                            Что касается организационного общения и сотрудничества, языковые барьеры в транснациональных корпорациях могут препятствовать командной динамике и процессам принятия решений. Когда в трансграничных проектах участвуют команды из разных стран, различия в языке и стилях общения могут создавать недоразумения, задержки и неэффективность.
+                        </p>
+                        <p class="text-justify">
+                            Например, проектная команда, состоящая из членов с разным языковым происхождением, может испытывать трудности в координации усилий, если нет общего владения языком или если языковые барьеры ограничивают обмен идеями.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 italic">
+                            In terms of organizational communication and collaboration, language barriers within multinational corporations can impede team dynamics and decision-making processes. When teams from different countries are involved in cross-border projects, differences in language and communication styles can create misunderstandings, delays, and inefficiencies.
+                        </p>
+                        <p class="text-justify italic">
+                            For instance, a project team composed of members from different linguistic backgrounds may struggle to coordinate their efforts if there is no common language proficiency or if language barriers limit the exchange of ideas.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 serif-sc">
+                            就组织沟通与协作而言，跨国公司内部的语言障碍可能阻碍团队活力和决策过程。当来自不同国家的团队参与跨境项目时，语言和沟通风格的差异可能造成误解、延误和效率低下。
+                        </p>
+                        <p class="text-justify serif-sc">
+                            例如，如果团队成员没有共同的语言能力，或者语言障碍限制了思想交流，那么由不同语言背景成员组成的项目团队可能在协调工作方面遇到困难。
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 案例：Volkswagen -->
+            <!-- 案例：Volkswagen - 修复：三语言显示 -->
             <div class="case-study case-volkswagen bg-blue-50 border border-blue-200 p-6 rounded-lg relative">
                 <div class="case-badge bg-blue-100 text-blue-800 mb-3">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/></svg>
-                    Corporate Case
+                    Corporate Case / Корпоративный кейс / 企业案例
                 </div>
-                <h3 class="font-bold text-gray-900 mb-3 text-lg">Volkswagen: Internal Communication Challenges</h3>
-                <div class="relative bg-white rounded-lg p-4 border border-blue-300/50">
+                
+                <h3 class="font-bold text-gray-900 mb-4 text-lg">Volkswagen: Проблемы внутренней коммуникации / Internal Communication Challenges / 大众汽车：内部沟通挑战</h3>
+                
+                <div class="relative bg-white rounded-lg p-4 border border-blue-300/50 mb-4">
                     <span class="quote-mark">"</span>
-                    <p class="text-sm text-gray-700 leading-relaxed pl-8 pt-2">
-                        A notable example is the difficulties faced by multinational companies like <strong>Volkswagen</strong>, where language and communication challenges among international teams contributed to inefficiencies in decision-making and slowed down the implementation of global strategies.
-                    </p>
+                    <div class="grid md:grid-cols-3 gap-4 pl-8 pt-2 text-sm">
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            Заметный пример — трудности, с которыми столкнулись такие транснациональные компании, как <strong>Volkswagen</strong>, где языковые и коммуникационные вызовы среди международных команд способствовали неэффективности принятия решений и замедлили реализацию глобальных стратегий.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify italic">
+                            A notable example is the difficulties faced by multinational companies like <strong>Volkswagen</strong>, where language and communication challenges among international teams contributed to inefficiencies in decision-making and slowed down the implementation of global strategies.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify serif-sc">
+                            一个明显的例子是<strong>大众汽车</strong>等跨国公司面临的困难，其中国际团队之间的语言和沟通挑战导致决策效率低下，并减缓了全球战略的实施。
+                        </p>
+                    </div>
                 </div>
+
                 <div class="mt-4 grid grid-cols-3 gap-3 text-center">
-                    <div class="bg-white p-2 rounded border border-blue-200">
-                        <div class="text-xs text-gray-500">Response Time</div>
+                    <div class="bg-white p-3 rounded border border-blue-200">
+                        <div class="text-xs text-gray-500 mb-1">Время отклика / Response Time / 响应时间</div>
                         <div class="text-sm font-bold text-blue-900">+40%</div>
                     </div>
-                    <div class="bg-white p-2 rounded border border-blue-200">
-                        <div class="text-xs text-gray-500">Error Rate</div>
-                        <div class="text-sm font-bold text-blue-900">Increased</div>
+                    <div class="bg-white p-3 rounded border border-blue-200">
+                        <div class="text-xs text-gray-500 mb-1">Уровень ошибок / Error Rate / 错误率</div>
+                        <div class="text-sm font-bold text-blue-900">Increased / Увеличен / 增加</div>
                     </div>
-                    <div class="bg-white p-2 rounded border border-blue-200">
-                        <div class="text-xs text-gray-500">Strategy Speed</div>
-                        <div class="text-sm font-bold text-blue-900">Slowed</div>
+                    <div class="bg-white p-3 rounded border border-blue-200">
+                        <div class="text-xs text-gray-500 mb-1">Скорость стратегии / Strategy Speed / 战略速度</div>
+                        <div class="text-sm font-bold text-blue-900">Slowed / Замедлена / 减缓</div>
                     </div>
                 </div>
             </div>
 
             <div class="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                <p class="text-sm text-green-900">
-                    <strong>Solution:</strong> Effective communication strategies, including language training and the use of interpreters or translators, are essential to overcoming these challenges and ensuring that teams can collaborate smoothly.
-                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <p class="text-green-900"><strong>Решение:</strong> Эффективные стратегии коммуникации, включая обучение языкам и использование переводчиков, необходимы для преодоления этих проблем.</p>
+                    <p class="text-green-900 italic"><strong>Solution:</strong> Effective communication strategies, including language training and the use of interpreters or translators, are essential to overcoming these challenges.</p>
+                    <p class="text-green-900 serif-sc"><strong>解决方案：</strong>包括语言培训和口译员或笔译员使用在内的有效沟通策略对于克服这些挑战至关重要。</p>
+                </div>
             </div>
         </section>
 
-        <!-- 第4节：品牌传播 -->
+        <!-- 第4节：品牌传播 - 修复：三语言完整显示 -->
         <section id="brand" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-lg flex-shrink-0">3.4</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Бренд-коммуникация и реклама</h2>
-                    <p class="text-gray-600 italic">Brand Communication and Advertising | 品牌传播与广告</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Бренд-коммуникация и реклама</h2>
+                    <p class="text-gray-600 italic text-sm">Brand Communication and Advertising</p>
+                    <p class="text-gray-600 serif-sc text-sm">品牌传播与广告</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 mb-6">
-                <p class="text-justify">
-                    Language barriers also affect brand communication and advertising efforts. In the global marketplace, a company's brand message must be carefully crafted and localized to resonate with diverse cultural and linguistic groups. Misinterpretations or poor translations of advertising content can severely damage a brand's image, as seen in several high-profile cases of failed advertisements.
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed mb-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify">
+                            Языковые барьеры также влияют на коммуникацию бренда и рекламные усилия. На глобальном рынке послание бренда компании должно быть тщательно разработано и локализовано, чтобы находить отклик у разнообразных культурных и языковых групп. Неправильная интерпретация или плохие переводы рекламного контента могут серьезно повредить имиджу бренда.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify italic">
+                            Language barriers also affect brand communication and advertising efforts. In the global marketplace, a company's brand message must be carefully crafted and localized to resonate with diverse cultural and linguistic groups. Misinterpretations or poor translations of advertising content can severely damage a brand's image.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify serif-sc">
+                            语言障碍还会影响品牌传播和广告工作。在全球市场中，公司的品牌信息必须经过精心设计和本地化，才能与不同的文化和语言群体产生共鸣。广告内容的误解或翻译不佳可能严重损害品牌形象。
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 经典案例：Coca-Cola -->
+            <!-- 经典案例：Coca-Cola - 修复：三语言显示 -->
             <div class="case-study case-coca-cola bg-red-50 border border-red-200 p-6 rounded-lg mb-6 relative">
                 <div class="case-badge bg-red-100 text-red-800 mb-3">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-                    Classic Translation Error
+                    Classic Translation Error / Классическая ошибка перевода / 经典翻译错误
                 </div>
-                <h3 class="font-bold text-gray-900 mb-3 text-lg">Coca-Cola in China: "Bite the Wax Tadpole"</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-3">
-                        <p class="text-sm text-gray-700 leading-relaxed">
-                            <strong>Coca-Cola's</strong> early marketing campaigns in China were initially problematic, as the brand's name was mistranslated to mean <span class="bg-red-100 px-2 py-1 rounded text-red-800 font-semibold">"bite the wax tadpole"</span> (蝌蚪啃蜡), which had no positive connotations in Chinese.
+                
+                <h3 class="font-bold text-gray-900 mb-4 text-lg">Coca-Cola в Китае: "Откусить восковую головастика" / "Bite the Wax Tadpole" / 可口可乐："蝌蚪啃蜡"</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 text-sm mb-4">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed text-justify mb-3">
+                            Ранние маркетинговые кампании <strong>Coca-Cola</strong> в Китае изначально были проблематичными, так как название бренда было неверно переведено как <span class="bg-red-100 px-2 py-1 rounded text-red-800 font-semibold">"蝌蚪啃蜡"</span> (откусить восковую головастика), что не имело никаких положительных коннотаций в китайском языке.
                         </p>
-                        <p class="text-sm text-gray-700 leading-relaxed">
-                            Such cultural missteps can lead to significant reputational harm, making it crucial for companies to invest in professional translation services and culturally competent advertising strategies when entering new markets.
+                        <p class="text-xs text-gray-600">
+                            Такие культурные оплошности могут привести к значительному репутационному ущербу, делая критически важным для компаний инвестирование в профессиональные услуги перевода.
                         </p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg border-2 border-red-200 shadow-inner">
-                        <div class="text-center mb-3">
-                            <span class="text-3xl">🥤</span>
+                    <div>
+                        <p class="text-gray-700 leading-relaxed text-justify mb-3 italic">
+                            <strong>Coca-Cola's</strong> early marketing campaigns in China were initially problematic, as the brand's name was mistranslated to mean <span class="bg-red-100 px-2 py-1 rounded text-red-800 font-semibold">"bite the wax tadpole"</span>, which had no positive connotations in Chinese.
+                        </p>
+                        <p class="text-xs text-gray-600 italic">
+                            Such cultural missteps can lead to significant reputational harm, making it crucial for companies to invest in professional translation services and culturally competent advertising strategies.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 leading-relaxed text-justify mb-3 serif-sc">
+                            <strong>可口可乐</strong>在中国的早期营销活动最初存在问题，因为品牌名称被误译为<span class="bg-red-100 px-2 py-1 rounded text-red-800 font-semibold">"蝌蚪啃蜡"</span>，这在中文中没有任何积极的含义。
+                        </p>
+                        <p class="text-xs text-gray-600 serif-sc">
+                            这种文化失误可能导致严重的声誉损害，使公司必须投资于专业翻译服务和文化能力强的广告策略。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border-2 border-red-200 shadow-inner">
+                    <div class="grid grid-cols-3 gap-4 text-xs">
+                        <div class="text-center">
+                            <div class="text-gray-500 mb-1">Оригинальный замысел / Original Intent / 原意</div>
+                            <div class="font-semibold text-green-700 text-sm">可口可乐 (Вкусное счастье)</div>
                         </div>
-                        <div class="space-y-2 text-xs">
-                            <div class="flex justify-between border-b border-gray-100 pb-2">
-                                <span class="text-gray-500">Original Intent:</span>
-                                <span class="font-semibold text-green-700">可口可乐 (Delicious Happiness)</span>
-                            </div>
-                            <div class="flex justify-between border-b border-gray-100 pb-2">
-                                <span class="text-gray-500">Mistranslation:</span>
-                                <span class="font-semibold text-red-700">蝌蚪啃蜡 (Bite Wax Tadpole)</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-500">Result:</span>
-                                <span class="font-semibold text-orange-700">Market Resistance</span>
-                            </div>
+                        <div class="text-center border-l border-r border-gray-200 px-2">
+                            <div class="text-gray-500 mb-1">Ошибка перевода / Mistranslation / 误译</div>
+                            <div class="font-semibold text-red-700 text-sm">蝌蚪啃蜡 (Откусить восковую головастика)</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-gray-500 mb-1">Результат / Result / 结果</div>
+                            <div class="font-semibold text-orange-700 text-sm">Сопротивление рынка / Market Resistance / 市场抵制</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 近期案例：Nike & H&M -->
+            <!-- 近期案例：Nike & H&M - 修复：三语言显示 -->
             <div class="case-study case-nike bg-gray-50 border border-gray-200 p-6 rounded-lg">
                 <div class="case-badge bg-gray-200 text-gray-800 mb-3">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
-                    Recent Cases
+                    Recent Cases / Недавние кейсы / 近期案例
                 </div>
-                <h3 class="font-bold text-gray-900 mb-3">Nike and H&M: Cultural Sensitivity Issues</h3>
-                <p class="text-sm text-gray-700 leading-relaxed mb-3">
-                    A more recent example involves companies like <strong>Nike</strong> and <strong>H&M</strong>, which have occasionally faced backlash over cultural insensitivity in their marketing campaigns. This highlights the importance of linguistic and cultural expertise in ensuring that advertising messages are accurately conveyed and culturally appropriate.
-                </p>
-                <div class="flex gap-2 flex-wrap">
-                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs">Cultural Backlash</span>
-                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs">Social Media Crisis</span>
-                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs">Reputation Risk</span>
+                
+                <h3 class="font-bold text-gray-900 mb-3">Nike и H&M: Вопросы культурной чувствительности / Cultural Sensitivity Issues / 文化敏感性问题</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 text-sm mb-3">
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Более недавний пример включает такие компании, как <strong>Nike</strong> и <strong>H&M</strong>, которые время от времени сталкивались с негативной реакцией из-за культурной нечувствительности в своих маркетинговых кампаниях.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-justify italic">
+                        A more recent example involves companies like <strong>Nike</strong> and <strong>H&M</strong>, which have occasionally faced backlash over cultural insensitivity in their marketing campaigns.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-justify serif-sc">
+                        一个更近的例子涉及<strong>耐克</strong>和<strong>H&M</strong>等公司，它们偶尔因在营销活动中对文化不敏感而面临强烈反对。
+                    </p>
+                </div>
+
+                <div class="flex gap-2 flex-wrap justify-center">
+                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs">Культурная реакция / Cultural Backlash / 文化抵制</span>
+                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs">Кризис соцсетей / Social Media Crisis / 社交媒体危机</span>
+                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs">Репутационный риск / Reputation Risk / 声誉风险</span>
                 </div>
             </div>
 
             <div class="mt-6 bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-lg">
-                <p class="text-sm text-purple-900">
-                    <strong>Key Takeaway:</strong> Brand communication requires not just linguistic translation, but deep cultural adaptation to avoid misunderstandings that can severely damage brand equity in new markets.
-                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <p class="text-purple-900"><strong>Ключевой вывод:</strong> Бренд-коммуникация требует не только лингвистического перевода, но глубокой культурной адаптации.</p>
+                    <p class="text-purple-900 italic"><strong>Key Takeaway:</strong> Brand communication requires not just linguistic translation, but deep cultural adaptation to avoid misunderstandings.</p>
+                    <p class="text-purple-900 serif-sc"><strong>关键要点：</strong>品牌传播不仅需要语言翻译，还需要深层次的文化适应，以避免在新市场中严重损害品牌资产的误解。</p>
+                </div>
             </div>
         </section>
 
-        <!-- 章节总结 -->
+        <!-- 章节总结 - 修复：三语言完整显示 -->
         <div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-6 md:p-8 shadow-xl mb-8">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 border-b border-blue-700 pb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                Chapter Summary / Резюме главы / 章节总结
+                Резюме главы / Chapter Summary / 章节总结
             </h3>
-            <div class="grid md:grid-cols-3 gap-6 text-sm opacity-90">
-                <div>
-                    <p class="mb-2 text-blue-200 font-semibold text-xs uppercase">Market Entry</p>
-                    <p>Language barriers obstruct market positioning and consumer understanding, requiring careful localization.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6 text-sm opacity-95">
+                <div class="bg-blue-800/50 p-4 rounded-lg border border-blue-700">
+                    <p class="mb-2 text-blue-200 font-semibold text-xs uppercase">Выход на рынок / Market Entry / 市场进入</p>
+                    <p class="text-justify">Языковые барьеры препятствуют позиционированию на рынке и пониманию потребителей, требуя тщательной локализации. Ошибки перевода могут вызвать значительный ущерб репутации.</p>
                 </div>
-                <div>
-                    <p class="mb-2 text-blue-200 font-semibold text-xs uppercase">Operations</p>
-                    <p>CRM and internal communication suffer without multilingual capabilities, affecting efficiency and loyalty.</p>
+                <div class="bg-blue-800/50 p-4 rounded-lg border border-blue-700">
+                    <p class="mb-2 text-blue-200 font-semibold text-xs uppercase">Операции / Operations / 运营</p>
+                    <p class="text-justify italic">CRM and internal communication suffer without multilingual capabilities, affecting efficiency and loyalty. Volkswagen case shows 40% increase in response time due to language barriers.</p>
                 </div>
-                <div>
-                    <p class="mb-2 text-blue-200 font-semibold text-xs uppercase">Brand Strategy</p>
-                    <p>Translation errors can cause irreversible brand damage, necessitating cultural expertise.</p>
+                <div class="bg-blue-800/50 p-4 rounded-lg border border-blue-700">
+                    <p class="mb-2 text-blue-200 font-semibold text-xs uppercase serif-sc">Стратегия бренда / Brand Strategy / 品牌战略</p>
+                    <p class="text-justify serif-sc">翻译错误可能造成不可逆转的品牌损害，如可口可乐的"蝌蚪啃蜡"案例所示。需要文化专业知识来确保广告信息准确传达并在文化上适当。</p>
                 </div>
             </div>
         </div>
 
     </main>
 
-    <!-- 底部章节导航 -->
+    <!-- 底部章节导航 - 修复：三语言显示 -->
     <footer class="max-w-5xl mx-auto px-8 mt-8 mb-12 no-print">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -438,22 +648,22 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     </div>
                     <div class="text-left">
-                        <div class="text-xs text-gray-400 uppercase">Previous</div>
-                        <div class="font-semibold">Chapter 2</div>
-                        <div class="text-xs text-gray-500">Definition & Classification</div>
+                        <div class="text-xs text-gray-400 uppercase">Предыдущая / Previous / 上一章</div>
+                        <div class="font-semibold">Chapter 2 / Глава 2 / 第2章</div>
+                        <div class="text-xs text-gray-500">Определение и классификация / Definition & Classification / 定义与分类</div>
                     </div>
                 </a>
 
                 <a href="toc.html" class="flex flex-col items-center text-gray-400 hover:text-blue-800 transition-colors px-8">
                     <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    <span class="text-xs">Table of Contents</span>
+                    <span class="text-xs">Оглавление / Contents / 目录</span>
                 </a>
 
                 <a href="chapter4.html" class="flex items-center gap-3 text-gray-600 hover:text-blue-800 transition-colors group text-right">
                     <div class="text-right">
-                        <div class="text-xs text-gray-400 uppercase">Next</div>
-                        <div class="font-semibold">Chapter 4</div>
-                        <div class="text-xs text-gray-500">Overcoming Strategies</div>
+                        <div class="text-xs text-gray-400 uppercase">Следующая / Next / 下一章</div>
+                        <div class="font-semibold">Chapter 4 / Глава 4 / 第4章</div>
+                        <div class="text-xs text-gray-500">Стратегии преодоления / Overcoming Strategies / 克服策略</div>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-blue-100 group-hover:bg-blue-200 flex items-center justify-center transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -466,7 +676,7 @@
     <!-- 页脚 -->
     <div class="max-w-5xl mx-auto px-8 text-center text-xs text-gray-400 pb-8">
         <p>© 2024 Чжао Цзе / Zhao Jie / 赵杰 • Al-Farabi Kazakh National University</p>
-        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 3, pp. 6-8</p>
+        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 3 / Глава 3 / 第3章, pp. 6-8</p>
     </div>
 
     <script>
