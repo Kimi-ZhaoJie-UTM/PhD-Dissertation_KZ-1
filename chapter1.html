@@ -263,13 +263,25 @@
                         1.2 Проблема и цели исследования / Research Questions & Objectives / 研究问题与目标
                     </h2>
 
-                    <!-- 核心研究问题 -->
+                    <!-- 核心研究问题 - 修复：补充俄语翻译 -->
                     <div class="highlight-box p-4 mb-6 rounded-r-lg">
-                        <h3 class="font-bold text-gray-800 mb-2 text-sm uppercase tracking-wider">Центральный вопрос / Core Research Question / 核心研究问题</h3>
+                        <h3 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wider">Центральный вопрос / Core Research Question / 核心研究问题</h3>
                         <div class="grid md:grid-cols-3 gap-4 text-sm">
-                            <p class="text-gray-700 italic">How do language barriers influence various facets of business operations in multinational enterprises and their ability to penetrate global markets?</p>
-                            <p class="text-gray-700 text-center hidden md:block">•</p>
-                            <p class="text-gray-700 serif-sc text-justify">语言障碍如何影响跨国企业的各个业务层面及其渗透全球市场的能力？</p>
+                            <!-- 俄语 -->
+                            <div>
+                                <span class="text-xs font-bold text-blue-900 block mb-1">Русский</span>
+                                <p class="text-gray-700 text-justify">Как языковые барьеры влияют на различные аспекты деловых операций в транснациональных компаниях и их способность проникать на глобальные рынки?</p>
+                            </div>
+                            <!-- 英语 -->
+                            <div>
+                                <span class="text-xs font-bold text-green-900 block mb-1">English</span>
+                                <p class="text-gray-700 italic text-justify">How do language barriers influence various facets of business operations in multinational enterprises and their ability to penetrate global markets?</p>
+                            </div>
+                            <!-- 中文 -->
+                            <div>
+                                <span class="text-xs font-bold text-red-900 block mb-1 serif-sc">中文</span>
+                                <p class="text-gray-700 serif-sc text-justify">语言障碍如何影响跨国企业的各个业务层面及其渗透全球市场的能力？</p>
+                            </div>
                         </div>
                     </div>
 
@@ -403,7 +415,7 @@
                 </div>
             </section>
 
-            <!-- 论文结构概述 -->
+            <!-- 论文结构概述 - 修复：确保每章都显示三语言标题 -->
             <section class="content-card p-6 md:p-8 bg-gradient-to-br from-gray-50 to-white">
                 <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                     <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,33 +425,80 @@
                 </h2>
                 
                 <div class="space-y-3">
-                    <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer" onclick="window.location.href='chapter2.html'">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-sm">Языковые барьеры: определение и классификация</h4>
-                            <p class="text-xs text-gray-500 mt-1">Language Barriers: Definition and Classification / 语言障碍：定义与分类</p>
+                    <!-- 第2章 -->
+                    <div class="flex flex-col md:flex-row md:items-center gap-3 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-gray-200" onclick="window.location.href='chapter2.html'">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                        <div class="flex-1 grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <span class="font-bold text-gray-800 block">Языковые барьеры: определение и классификация</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 italic block">Language Barriers: Definition and Classification</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 serif-sc block">语言障碍：定义与分类</span>
+                            </div>
                         </div>
+                        <svg class="w-5 h-5 text-gray-400 flex-shrink-0 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
                     </div>
-                    <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer" onclick="window.location.href='chapter3.html'">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-sm">Влияние языковых барьеров на расширение рынков</h4>
-                            <p class="text-xs text-gray-500 mt-1">Impact on International Market Expansion / 语言障碍对国际市场扩张的影响</p>
+
+                    <!-- 第3章 -->
+                    <div class="flex flex-col md:flex-row md:items-center gap-3 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-gray-200" onclick="window.location.href='chapter3.html'">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                        <div class="flex-1 grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <span class="font-bold text-gray-800 block">Влияние языковых барьеров на расширение рынков</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 italic block">Impact on International Market Expansion</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 serif-sc block">语言障碍对国际市场扩张的影响</span>
+                            </div>
                         </div>
+                        <svg class="w-5 h-5 text-gray-400 flex-shrink-0 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
                     </div>
-                    <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer" onclick="window.location.href='chapter4.html'">
-                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-sm">Стратегии преодоления языковых барьеров</h4>
-                            <p class="text-xs text-gray-500 mt-1">Strategies for Overcoming Language Barriers / 克服语言障碍的策略</p>
+
+                    <!-- 第4章 -->
+                    <div class="flex flex-col md:flex-row md:items-center gap-3 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-gray-200" onclick="window.location.href='chapter4.html'">
+                        <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                        <div class="flex-1 grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <span class="font-bold text-gray-800 block">Стратегии преодоления языковых барьеров</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 italic block">Strategies for Overcoming Language Barriers</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 serif-sc block">克服语言障碍的策略</span>
+                            </div>
                         </div>
+                        <svg class="w-5 h-5 text-gray-400 flex-shrink-0 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
                     </div>
-                    <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer" onclick="window.location.href='chapter5.html'">
-                        <div class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-sm">Заключение и перспективы</h4>
-                            <p class="text-xs text-gray-500 mt-1">Conclusion and Future Research / 结论与未来研究</p>
+
+                    <!-- 第5章 -->
+                    <div class="flex flex-col md:flex-row md:items-center gap-3 p-4 rounded-lg hover:bg-white hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-gray-200" onclick="window.location.href='chapter5.html'">
+                        <div class="w-10 h-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                        <div class="flex-1 grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <span class="font-bold text-gray-800 block">Заключение и перспективы</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 italic block">Conclusion and Future Research</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 serif-sc block">结论与未来研究</span>
+                            </div>
                         </div>
+                        <svg class="w-5 h-5 text-gray-400 flex-shrink-0 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
                     </div>
                 </div>
             </section>
