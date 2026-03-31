@@ -132,6 +132,28 @@
             color: #059669;
             font-weight: bold;
         }
+        .lang-column {
+            border-right: 1px solid #e2e8f0;
+            padding-right: 1rem;
+        }
+        .lang-column:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        @media (max-width: 768px) {
+            .lang-column {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding-right: 0;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+            .lang-column:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
         @media print {
             .no-print { display: none !important; }
             body { background: white; }
@@ -165,22 +187,19 @@
     <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
         <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <a href="toc.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <a href="chapter3.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
-                    <span class="hidden sm:inline">Contents / 目录</span>
-                </a>
-                <span class="text-gray-300">|</span>
-                <a href="chapter3.html" class="text-gray-600 hover:text-blue-800 transition-colors text-sm">
-                    ← Ch.3
+                    <span class="hidden sm:inline">← Chapter 3 / Глава 3 / 第3章</span>
+                    <span class="sm:hidden">← 第3章</span>
                 </a>
             </div>
             
             <div class="flex items-center gap-2">
-                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 4 of 5</span>
+                <span class="hidden md:inline text-xs text-gray-500 font-mono">Chapter 4 / Глава 4 / 第4章</span>
                 <a href="chapter5.html" class="nav-pill text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-md flex items-center gap-2">
-                    <span>Ch.5 →</span>
+                    <span>Chapter 5 / Глава 5 / 第5章 →</span>
                 </a>
             </div>
         </div>
@@ -197,7 +216,7 @@
                 <div class="flex items-center gap-3 mb-4">
                     <span class="w-12 h-12 rounded-full bg-gradient-to-br from-green-700 to-green-500 text-white flex items-center justify-center font-bold text-xl shadow-lg">4</span>
                     <div class="h-px flex-1 bg-gradient-to-r from-green-200 to-transparent max-w-xs"></div>
-                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold uppercase tracking-wider">Solutions</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold uppercase tracking-wider">Solutions / Решения / 解决方案</span>
                 </div>
 
                 <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
@@ -211,296 +230,449 @@
                 </div>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">Language Training</span>
-                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">AI Translation</span>
-                    <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-xs font-medium border border-orange-100">Localization</span>
-                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Cultural Adaptation</span>
+                    <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-100">Языковое обучение / Language Training / 语言培训</span>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-100">AI перевод / AI Translation / AI翻译</span>
+                    <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-xs font-medium border border-orange-100">Локализация / Localization / 本地化</span>
+                    <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100">Культурная адаптация / Cultural Adaptation / 文化适应</span>
                 </div>
             </div>
         </div>
 
-        <!-- 章节引言 -->
+        <!-- 章节引言 - 修复：三语言完整显示 -->
         <div class="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-6 mb-8 shadow-sm">
-            <p class="text-gray-800 leading-relaxed">
-                <strong>Strategic Overview:</strong> To mitigate the impact of language barriers on international business, companies must adopt effective strategies that enhance cross-cultural communication and ensure smooth operations in foreign markets. This chapter examines three critical approaches: human capital development through language training, technological solutions via AI translation tools, and deep cultural adaptation through localization strategies.
-            </p>
+            <h3 class="font-bold text-green-900 mb-4 flex items-center gap-2 text-sm uppercase">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Стратегический обзор / Strategic Overview / 战略概述
+            </h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="lang-column">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                        <span class="font-bold text-blue-900 text-xs uppercase">Русский</span>
+                    </div>
+                    <p class="text-gray-800 leading-relaxed text-justify">
+                        Для смягчения влияния языковых барьеров на международный бизнес компании должны принять эффективные стратегии, которые усиливают межкультурную коммуникацию и обеспечивают бесперебойную работу на зарубежных рынках. Эта глава рассматривает три критических подхода: развитие человеческого капитала через языковое обучение, технологические решения с помощью инструментов AI-перевода и глубокую культурную адаптацию через стратегии локализации.
+                    </p>
+                </div>
+                <div class="lang-column">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-green-600 rounded-full"></span>
+                        <span class="font-bold text-green-900 text-xs uppercase">English</span>
+                    </div>
+                    <p class="text-gray-800 leading-relaxed text-justify italic">
+                        To mitigate the impact of language barriers on international business, companies must adopt effective strategies that enhance cross-cultural communication and ensure smooth operations in foreign markets. This chapter examines three critical approaches: human capital development through language training, technological solutions via AI translation tools, and deep cultural adaptation through localization strategies.
+                    </p>
+                </div>
+                <div class="lang-column">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+                        <span class="font-bold text-red-900 text-xs uppercase serif-sc">中文</span>
+                    </div>
+                    <p class="text-gray-800 leading-relaxed text-justify serif-sc">
+                        为减轻语言障碍对国际业务的影响，公司必须采取有效策略来加强跨文化沟通并确保在国外市场的顺利运营。本章探讨三种关键方法：通过语言培训进行人力资本开发、通过AI翻译工具提供技术解决方案，以及通过本地化策略进行深度文化适应。
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- 4.1 语言培训与人才 -->
+        <!-- 4.1 语言培训与人才 - 修复：三语言完整显示 -->
         <section id="training" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg flex-shrink-0">4.1</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Языковое обучение и набор многоязычных кадров</h2>
-                    <p class="text-gray-600 italic">Language Training & Multilingual Talent | 语言培训与多语言人才招聘</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Языковое обучение и набор многоязычных кадров</h2>
+                    <p class="text-gray-600 italic text-sm">Language Training & Multilingual Talent</p>
+                    <p class="text-gray-600 serif-sc text-sm">语言培训与多语言人才招聘</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 mb-6">
-                <p class="text-justify">
-                    One fundamental strategy is language training and the recruitment of multilingual talent. By investing in language education, international companies can empower their employees to engage more effectively in global communication.
-                </p>
-                <p class="text-justify">
-                    Language training programs are crucial in developing employees' ability to interact with foreign clients, partners, and colleagues, enabling them to navigate different linguistic and cultural contexts with ease.
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed mb-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify mb-3">
+                            Одна из фундаментальных стратегий — языковое обучение и набор многоязычного персонала. Инвестируя в языковое образование, международные компании могут расширить возможности своих сотрудников для более эффективного участия в глобальной коммуникации.
+                        </p>
+                        <p class="text-justify">
+                            Программы языкового обучения имеют решающее значение для развития способности сотрудников взаимодействовать с иностранными клиентами, партнерами и коллегами, позволяя им с легкостью ориентироваться в разных языковых и культурных контекстах.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 italic">
+                            One fundamental strategy is language training and the recruitment of multilingual talent. By investing in language education, international companies can empower their employees to engage more effectively in global communication.
+                        </p>
+                        <p class="text-justify italic">
+                            Language training programs are crucial in developing employees' ability to interact with foreign clients, partners, and colleagues, enabling them to navigate different linguistic and cultural contexts with ease.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 serif-sc">
+                            一项基本策略是语言培训和多语言人才招聘。通过投资语言教育，国际公司可以使员工能够更有效地参与全球沟通。
+                        </p>
+                        <p class="text-justify serif-sc">
+                            语言培训计划对于培养员工与外国客户、合作伙伴和同事互动的能力至关重要，使他们能够轻松应对不同的语言和文化背景。
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 策略卡片 -->
+            <!-- 策略卡片 - 修复：三语言显示 -->
             <div class="grid md:grid-cols-2 gap-4 mb-6">
                 <div class="strategy-card p-4">
                     <div class="flex items-start gap-3">
                         <div class="icon-circle bg-blue-100 text-blue-600 flex-shrink-0">🎓</div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Corporate Language Programs</h4>
-                            <p class="text-sm text-gray-600">Offering language courses to staff members, particularly those working in regions where language differences are significant.</p>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 mb-2 text-sm">Корпоративные языковые программы / Corporate Language Programs / 企业语言计划</h4>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Предложение языковых курсов сотрудникам, особенно тем, кто работает в регионах, где языковые различия значительны.</p>
+                                <p class="italic">Offering language courses to staff members, particularly those working in regions where language differences are significant.</p>
+                                <p class="serif-sc">为员工提供语言课程，特别是在语言差异显著的地区工作的员工。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="strategy-card p-4">
                     <div class="flex items-start gap-3">
                         <div class="icon-circle bg-green-100 text-green-600 flex-shrink-0">🌍</div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-1">Multilingual Recruitment</h4>
-                            <p class="text-sm text-gray-600">Employing personnel fluent in the languages of target markets brings valuable cultural insight.</p>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 mb-2 text-sm">Многоязычный набор / Multilingual Recruitment / 多语言招聘</h4>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Найм персонала, свободно владеющего языками целевых рынков, приносит ценный культурный инсайт.</p>
+                                <p class="italic">Employing personnel fluent in the languages of target markets brings valuable cultural insight.</p>
+                                <p class="serif-sc">雇用精通目标市场语言的人员可带来宝贵的文化洞察。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                <p class="text-sm text-blue-900">
-                    <strong>Key Benefit:</strong> Multilingual employees not only facilitate smoother communication but also bring valuable cultural insight, which is vital for tailoring business strategies to local contexts.
-                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <p class="text-blue-900"><strong>Ключевая выгода:</strong> Многоязычные сотрудники не только облегчают более плавную коммуникацию, но и приносят ценный культурный инсайт, жизненно важный для адаптации бизнес-стратегий к местному контексту.</p>
+                    <p class="text-blue-900 italic"><strong>Key Benefit:</strong> Multilingual employees not only facilitate smoother communication but also bring valuable cultural insight, which is vital for tailoring business strategies to local contexts.</p>
+                    <p class="text-blue-900 serif-sc"><strong>关键收益：</strong>多语言员工不仅促进更顺畅的沟通，还提供宝贵的文化洞察，这对于针对当地环境定制业务战略至关重要。</p>
+                </div>
             </div>
         </section>
 
-        <!-- 4.2 技术解决方案 -->
+        <!-- 4.2 技术解决方案 - 修复：三语言完整显示 -->
         <section id="technology" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-lg flex-shrink-0">4.2</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Технологические решения и услуги перевода</h2>
-                    <p class="text-gray-600 italic">Technology Solutions & Translation Services | 技术解决方案与翻译服务</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Технологические решения и услуги перевода</h2>
+                    <p class="text-gray-600 italic text-sm">Technology Solutions & Translation Services</p>
+                    <p class="text-gray-600 serif-sc text-sm">技术解决方案与翻译服务</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 mb-6">
-                <p class="text-justify">
-                    Companies can leverage modern technology to address language barriers, especially in real-time communication. The use of translation and language services, including machine translation tools, is becoming increasingly common in global businesses.
-                </p>
-                <p class="text-justify">
-                    With the advent of artificial intelligence (AI) and natural language processing technologies, tools like Google Translate, DeepL, and other advanced translation platforms offer instant and often accurate translations of text, speech, and documents.
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed mb-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify mb-3">
+                            Компании могут использовать современные технологии для решения языковых барьеров, особенно в режиме реального времени. Использование услуг перевода и языковых сервисов, включая инструменты машинного перевода, становится все более распространенным в глобальном бизнесе.
+                        </p>
+                        <p class="text-justify">
+                            С появлением искусственного интеллекта (AI) и технологий обработки естественного языка такие инструменты, как Google Translate, DeepL и другие продвинутые платформы перевода, предлагают мгновенный и часто точный перевод текста, речи и документов.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 italic">
+                            Companies can leverage modern technology to address language barriers, especially in real-time communication. The use of translation and language services, including machine translation tools, is becoming increasingly common in global businesses.
+                        </p>
+                        <p class="text-justify italic">
+                            With the advent of artificial intelligence (AI) and natural language processing technologies, tools like Google Translate, DeepL, and other advanced translation platforms offer instant and often accurate translations of text, speech, and documents.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 serif-sc">
+                            公司可以利用现代技术来解决语言障碍，特别是在实时通信中。包括机器翻译工具在内的翻译和语言服务的使用在全球业务中变得越来越普遍。
+                        </p>
+                        <p class="text-justify serif-sc">
+                            随着人工智能（AI）和自然语言处理技术的出现，Google翻译、DeepL和其他先进翻译平台等工具可提供即时且通常准确的文本、语音和文档翻译。
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- AI工具展示 -->
+            <!-- AI工具展示 - 修复：三语言标签 -->
             <div class="grid md:grid-cols-3 gap-4 mb-6">
                 <div class="bg-white rounded-lg p-4 border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
                     <div class="text-2xl mb-2">🤖</div>
                     <h4 class="font-bold text-gray-900 text-sm mb-1">Google Translate</h4>
-                    <p class="text-xs text-gray-500">Real-time text & speech</p>
+                    <p class="text-xs text-gray-500 mb-1">Текст и речь в реальном времени</p>
+                    <p class="text-xs text-gray-500 italic">Real-time text & speech</p>
+                    <p class="text-xs text-gray-500 serif-sc">实时文本和语音</p>
                 </div>
                 <div class="bg-white rounded-lg p-4 border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
                     <div class="text-2xl mb-2">🧠</div>
                     <h4 class="font-bold text-gray-900 text-sm mb-1">DeepL</h4>
-                    <p class="text-xs text-gray-500">Neural machine translation</p>
+                    <p class="text-xs text-gray-500 mb-1">Нейронный машинный перевод</p>
+                    <p class="text-xs text-gray-500 italic">Neural machine translation</p>
+                    <p class="text-xs text-gray-500 serif-sc">神经机器翻译</p>
                 </div>
                 <div class="bg-white rounded-lg p-4 border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow">
                     <div class="text-2xl mb-2">👨‍💼</div>
                     <h4 class="font-bold text-gray-900 text-sm mb-1">Human Experts</h4>
-                    <p class="text-xs text-gray-500">Professional translators</p>
+                    <p class="text-xs text-gray-500 mb-1">Профессиональные переводчики</p>
+                    <p class="text-xs text-gray-500 italic">Professional translators</p>
+                    <p class="text-xs text-gray-500 serif-sc">专业翻译人员</p>
                 </div>
             </div>
 
             <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
-                <p class="text-sm text-purple-900">
-                    <strong>Best Practice:</strong> While machine translation can help overcome immediate language barriers, companies should invest in professional human translators for more complex or sensitive communication, especially in legal, marketing, and technical areas.
-                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <p class="text-purple-900"><strong>Лучшая практика:</strong> Хотя машинный перевод может помочь преодолеть немедленные языковые барьеры, компании должны инвестировать в профессиональных человеческих переводчиков для более сложной или чувствительной коммуникации.</p>
+                    <p class="text-purple-900 italic"><strong>Best Practice:</strong> While machine translation can help overcome immediate language barriers, companies should invest in professional human translators for more complex or sensitive communication.</p>
+                    <p class="text-purple-900 serif-sc"><strong>最佳实践：</strong>虽然机器翻译可以帮助克服即时的语言障碍，但公司应投资于专业的人工翻译，以应对更复杂或敏感的沟通，特别是在法律、营销和技术领域。</p>
+                </div>
             </div>
         </section>
 
-        <!-- 4.3 本地化适应 -->
+        <!-- 4.3 本地化适应 - 修复：三语言完整显示 -->
         <section id="localization" class="section-card p-6 md:p-8 mb-8">
             <div class="flex items-start gap-4 mb-6">
                 <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-lg flex-shrink-0">4.3</div>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Локализация и культурная адаптация</h2>
-                    <p class="text-gray-600 italic">Localization & Cultural Adaptation | 本地化与文化适应</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Локализация и культурная адаптация</h2>
+                    <p class="text-gray-600 italic text-sm">Localization & Cultural Adaptation</p>
+                    <p class="text-gray-600 serif-sc text-sm">本地化与文化适应</p>
                 </div>
             </div>
 
-            <div class="prose max-w-none text-gray-700 leading-relaxed space-y-4 mb-6">
-                <p class="text-justify">
-                    Another essential strategy is localization and cultural adaptation. Localization goes beyond mere translation and involves adjusting business practices, products, and services to align with the cultural, social, and linguistic characteristics of local markets.
-                </p>
-                <p class="text-justify">
-                    In today's competitive global economy, companies must recognize that understanding and respecting local cultures is just as important as providing products in the local language.
-                </p>
+            <div class="space-y-6 text-gray-700 leading-relaxed mb-6">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="lang-column">
+                        <p class="text-justify mb-3">
+                            Еще одна важная стратегия — локализация и культурная адаптация. Локализация выходит за рамки простого перевода и включает корректировку бизнес-практик, продуктов и услуг в соответствии с культурными, социальными и языковыми характеристиками местных рынков.
+                        </p>
+                        <p class="text-justify">
+                            В современной конкурентной глобальной экономике компании должны признавать, что понимание и уважение местных культур так же важно, как и предоставление продуктов на местном языке.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 italic">
+                            Another essential strategy is localization and cultural adaptation. Localization goes beyond mere translation and involves adjusting business practices, products, and services to align with the cultural, social, and linguistic characteristics of local markets.
+                        </p>
+                        <p class="text-justify italic">
+                            In today's competitive global economy, companies must recognize that understanding and respecting local cultures is just as important as providing products in the local language.
+                        </p>
+                    </div>
+                    <div class="lang-column">
+                        <p class="text-justify mb-3 serif-sc">
+                            另一项基本策略是本地化和文化适应。本地化不仅仅是翻译，还涉及调整业务实践、产品和服务，以符合当地市场的文化、社会和语言特征。
+                        </p>
+                        <p class="text-justify serif-sc">
+                            在当今竞争激烈的全球经济中，公司必须认识到，理解和尊重当地文化与提供当地语言的产品同样重要。
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 本地化维度 -->
+            <!-- 本地化维度 - 修复：三语言标签 -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <div class="bg-gradient-to-br from-orange-50 to-white rounded-lg p-4 border border-orange-200">
                     <div class="text-2xl mb-2">🍔</div>
-                    <h4 class="font-bold text-gray-900 text-sm mb-1">Product Adaptation</h4>
-                    <p class="text-xs text-gray-600">Menu localization, feature modification</p>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">Адаптация продукта / Product Adaptation / 产品适应</h4>
+                    <p class="text-xs text-gray-600 mb-1">Локализация меню, модификация функций</p>
+                    <p class="text-xs text-gray-600 italic mb-1">Menu localization, feature modification</p>
+                    <p class="text-xs text-gray-600 serif-sc">菜单本地化，功能修改</p>
                 </div>
                 <div class="bg-gradient-to-br from-pink-50 to-white rounded-lg p-4 border border-pink-200">
                     <div class="text-2xl mb-2">📢</div>
-                    <h4 class="font-bold text-gray-900 text-sm mb-1">Marketing Messages</h4>
-                    <p class="text-xs text-gray-600">Culturally relevant campaigns</p>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">Маркетинговые сообщения / Marketing Messages / 营销信息</h4>
+                    <p class="text-xs text-gray-600 mb-1">Культурно актуальные кампании</p>
+                    <p class="text-xs text-gray-600 italic mb-1">Culturally relevant campaigns</p>
+                    <p class="text-xs text-gray-600 serif-sc">文化相关的营销活动</p>
                 </div>
                 <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 border border-blue-200">
                     <div class="text-2xl mb-2">🖥️</div>
-                    <h4 class="font-bold text-gray-900 text-sm mb-1">UI/UX Design</h4>
-                    <p class="text-xs text-gray-600">Interface localization</p>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">UI/UX Дизайн / UI/UX Design / 界面设计</h4>
+                    <p class="text-xs text-gray-600 mb-1">Локализация интерфейса</p>
+                    <p class="text-xs text-gray-600 italic mb-1">Interface localization</p>
+                    <p class="text-xs text-gray-600 serif-sc">界面本地化</p>
                 </div>
                 <div class="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 border border-green-200">
                     <div class="text-2xl mb-2">🤝</div>
-                    <h4 class="font-bold text-gray-900 text-sm mb-1">Service Practices</h4>
-                    <p class="text-xs text-gray-600">Customer service norms</p>
+                    <h4 class="font-bold text-gray-900 text-sm mb-1">Сервисные практики / Service Practices / 服务实践</h4>
+                    <p class="text-xs text-gray-600 mb-1">Нормы обслуживания клиентов</p>
+                    <p class="text-xs text-gray-600 italic mb-1">Customer service norms</p>
+                    <p class="text-xs text-gray-600 serif-sc">客户服务规范</p>
                 </div>
             </div>
 
             <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
-                <p class="text-sm text-orange-900">
-                    <strong>Strategic Insight:</strong> By adapting marketing campaigns, product names, user interfaces, and even customer service practices to suit local preferences, values, and customs, companies build trust and loyalty among consumers.
-                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <p class="text-orange-900"><strong>Стратегический инсайт:</strong> Адаптируя маркетинговые кампании, названия продуктов, пользовательские интерфейсы и даже практики обслуживания клиентов под местные предпочтения, ценности и обычаи, компании выстраивают доверие и лояльность.</p>
+                    <p class="text-orange-900 italic"><strong>Strategic Insight:</strong> By adapting marketing campaigns, product names, user interfaces, and even customer service practices to suit local preferences, values, and customs, companies build trust and loyalty among consumers.</p>
+                    <p class="text-orange-900 serif-sc"><strong>战略洞察：</strong>通过调整营销活动、产品名称、用户界面甚至客户服务实践以适应当地的偏好、价值观和习俗，公司在消费者中建立信任和忠诚度。</p>
+                </div>
             </div>
         </section>
 
-        <!-- 成功案例展示 -->
+        <!-- 成功案例展示 - 修复：三语言完整显示 -->
         <div class="mb-8">
             <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Success Cases / Успешные кейсы / 成功案例
+                Успешные кейсы / Success Cases / 成功案例
             </h3>
 
             <div class="grid md:grid-cols-2 gap-6">
 
-                <!-- McDonald's 案例 -->
+                <!-- McDonald's 案例 - 修复：三语言显示 -->
                 <div class="success-case case-mcdonalds bg-yellow-50 border border-yellow-200 p-6 rounded-lg">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-2xl">🍟</div>
                         <div>
                             <h4 class="font-bold text-gray-900 text-lg">McDonald's</h4>
-                            <p class="text-xs text-yellow-700 font-semibold uppercase tracking-wider">Global Localization Leader</p>
+                            <p class="text-xs text-yellow-700 font-semibold uppercase tracking-wider">Лидер глобальной локализации / Global Localization Leader / 全球本地化领导者</p>
                         </div>
                     </div>
                     
                     <div class="space-y-3 mb-4">
                         <div class="bg-white rounded-lg p-3 border border-yellow-300/50">
-                            <div class="flex items-center gap-2 mb-1">
+                            <div class="flex items-center gap-2 mb-2">
                                 <span class="text-lg">🇮🇳</span>
-                                <span class="font-semibold text-sm text-gray-900">India</span>
+                                <span class="font-semibold text-sm text-gray-900">Индия / India / 印度</span>
                             </div>
-                            <p class="text-xs text-gray-600">McAloo Tikki burger (vegetarian option) catering to local dietary preferences and religious practices.</p>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Бургер McAloo Tikki (вегетарианский вариант) с учетом местных диетических предпочтений и религиозных практик.</p>
+                                <p class="italic">McAloo Tikki burger (vegetarian option) catering to local dietary preferences and religious practices.</p>
+                                <p class="serif-sc">麦阿鲁提基汉堡（素食选择），迎合当地饮食偏好和宗教习俗。</p>
+                            </div>
                         </div>
                         <div class="bg-white rounded-lg p-3 border border-yellow-300/50">
-                            <div class="flex items-center gap-2 mb-1">
+                            <div class="flex items-center gap-2 mb-2">
                                 <span class="text-lg">🇯🇵</span>
-                                <span class="font-semibold text-sm text-gray-900">Japan</span>
+                                <span class="font-semibold text-sm text-gray-900">Япония / Japan / 日本</span>
                             </div>
-                            <p class="text-xs text-gray-600">Teriyaki Burger and Ebi Filet-O aligning with local tastes and culinary traditions.</p>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Teriyaki Burger и Ebi Filet-O в соответствии с местными вкусами и кулинарными традициями.</p>
+                                <p class="italic">Teriyaki Burger and Ebi Filet-O aligning with local tastes and culinary traditions.</p>
+                                <p class="serif-sc">照烧汉堡和虾排鱼汉堡，符合当地口味和烹饪传统。</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="flex items-center gap-2 text-xs text-green-700 bg-green-100 rounded-full px-3 py-1 w-fit">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span class="font-semibold">Result: Market Leadership</span>
+                        <span class="font-semibold">Результат: Лидерство на рынке / Result: Market Leadership / 结果：市场领导地位</span>
                     </div>
                 </div>
 
-                <!-- Coca-Cola 案例 -->
+                <!-- Coca-Cola 案例 - 修复：三语言显示 -->
                 <div class="success-case case-cocacola bg-red-50 border border-red-200 p-6 rounded-lg">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-2xl text-white">🥤</div>
                         <div>
                             <h4 class="font-bold text-gray-900 text-lg">Coca-Cola</h4>
-                            <p class="text-xs text-red-700 font-semibold uppercase tracking-wider">Cultural Messaging Expert</p>
+                            <p class="text-xs text-red-700 font-semibold uppercase tracking-wider">Эксперт по культурным сообщениям / Cultural Messaging Expert / 文化信息专家</p>
                         </div>
                     </div>
                     
                     <div class="space-y-3 mb-4">
                         <div class="bg-white rounded-lg p-3 border border-red-300/50">
-                            <div class="flex items-center gap-2 mb-1">
+                            <div class="flex items-center gap-2 mb-2">
                                 <span class="text-lg">🇨🇳</span>
-                                <span class="font-semibold text-sm text-gray-900">China Strategy</span>
+                                <span class="font-semibold text-sm text-gray-900">Китайская стратегия / China Strategy / 中国战略</span>
                             </div>
-                            <p class="text-xs text-gray-600">Advertisements focus on <strong>family values and togetherness</strong> (团圆), aligning with traditional Chinese cultural themes.</p>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Реклама фокусируется на <strong>семейных ценностях и вместе</strong> (团圆), соответствуя традиционным китайским культурным темам.</p>
+                                <p class="italic">Advertisements focus on <strong>family values and togetherness</strong> (团圆), aligning with traditional Chinese cultural themes.</p>
+                                <p class="serif-sc">广告侧重于<strong>家庭价值观和团聚</strong>（团圆），符合中国传统 cultural 主题。</p>
+                            </div>
                         </div>
                         <div class="bg-white rounded-lg p-3 border border-red-300/50">
-                            <div class="flex items-center gap-2 mb-1">
+                            <div class="flex items-center gap-2 mb-2">
                                 <span class="text-lg">🇺🇸</span>
-                                <span class="font-semibold text-sm text-gray-900">Western Markets</span>
+                                <span class="font-semibold text-sm text-gray-900">Западные рынки / Western Markets / 西方市场</span>
                             </div>
-                            <p class="text-xs text-gray-600">Campaigns emphasize themes of <strong>individuality and freedom</strong>, resonating with Western cultural values.</p>
+                            <div class="space-y-1 text-xs text-gray-600">
+                                <p>Кампании подчеркивают темы <strong>индивидуальности и свободы</strong>, резонирующие с западными культурными ценностями.</p>
+                                <p class="italic">Campaigns emphasize themes of <strong>individuality and freedom</strong>, resonating with Western cultural values.</p>
+                                <p class="serif-sc">营销活动强调<strong>个性和自由</strong>的主题，与西方文化价值观产生共鸣。</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="flex items-center gap-2 text-xs text-green-700 bg-green-100 rounded-full px-3 py-1 w-fit">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span class="font-semibold">Result: Global Brand Resonance</span>
+                        <span class="font-semibold">Глобальный резонанс бренда / Global Brand Resonance / 全球品牌共鸣</span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- 其他成功案例 -->
+            <!-- 其他成功案例 - 修复：三语言显示 -->
             <div class="mt-6 bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <h4 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">Additional Success Stories</h4>
+                <h4 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">Дополнительные истории успеха / Additional Success Stories / 更多成功案例</h4>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="flex items-start gap-3">
                         <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-xs font-bold flex-shrink-0">✓</div>
                         <div>
                             <span class="font-semibold text-gray-900 text-sm">Nike</span>
-                            <p class="text-xs text-gray-600">Heavy investment in understanding local cultures and customizing marketing strategies accordingly.</p>
+                            <div class="space-y-1 text-xs text-gray-600 mt-1">
+                                <p>Большие инвестиции в понимание местных культур и соответствующую настройку маркетинговых стратегий.</p>
+                                <p class="italic">Heavy investment in understanding local cultures and customizing marketing strategies accordingly.</p>
+                                <p class="serif-sc">大力投资了解当地文化并相应定制营销策略。</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
                         <div class="w-8 h-8 rounded-full bg-green-700 text-white flex items-center justify-center text-xs font-bold flex-shrink-0">✓</div>
                         <div>
                             <span class="font-semibold text-gray-900 text-sm">Starbucks</span>
-                            <p class="text-xs text-gray-600">Localized store designs and product offerings tailored to regional preferences and cultural norms.</p>
+                            <div class="space-y-1 text-xs text-gray-600 mt-1">
+                                <p>Локализованные дизайны магазинов и продуктовые предложения, адаптированные к региональным предпочтениям.</p>
+                                <p class="italic">Localized store designs and product offerings tailored to regional preferences and cultural norms.</p>
+                                <p class="serif-sc">本地化的店铺设计和产品供应，根据地区偏好和文化规范量身定制。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 章节总结 -->
+        <!-- 章节总结 - 修复：三语言完整显示 -->
         <div class="bg-gradient-to-r from-green-800 to-green-700 text-white rounded-2xl p-6 md:p-8 shadow-xl mb-8">
-            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 border-b border-green-600 pb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Chapter Summary / Резюме главы / 章节总结
+                Резюме главы / Chapter Summary / 章节总结
             </h3>
-            <div class="grid md:grid-cols-3 gap-6 text-sm opacity-90">
-                <div>
-                    <p class="mb-2 text-green-200 font-semibold text-xs uppercase">Human Capital</p>
-                    <p>Language training and multilingual recruitment bridge communication gaps and provide cultural insight essential for local strategy development.</p>
+            <div class="grid md:grid-cols-3 gap-6 text-sm opacity-95">
+                <div class="bg-green-700/50 p-4 rounded-lg border border-green-600">
+                    <p class="mb-2 text-green-200 font-semibold text-xs uppercase">Человеческий капитал / Human Capital / 人力资本</p>
+                    <p class="text-justify mb-2">Языковое обучение и многоязычный набор преодолевают коммуникационные разрывы и обеспечивают культурный инсайт.</p>
+                    <p class="text-justify mb-2 italic">Language training and multilingual recruitment bridge communication gaps and provide cultural insight essential for local strategy development.</p>
+                    <p class="text-justify serif-sc">语言培训和多语言招聘弥合沟通鸿沟，并为当地战略发展提供必不可少的文化洞察。</p>
                 </div>
-                <div>
-                    <p class="mb-2 text-green-200 font-semibold text-xs uppercase">Technology</p>
-                    <p>AI translation tools (Google Translate, DeepL) combined with human expertise create robust communication strategies for real-time operations.</p>
+                <div class="bg-green-700/50 p-4 rounded-lg border border-green-600">
+                    <p class="mb-2 text-green-200 font-semibold text-xs uppercase">Технологии / Technology / 技术</p>
+                    <p class="text-justify mb-2">Инструменты AI-перевода (Google Translate, DeepL) в сочетании с человеческой экспертизой создают надежные коммуникационные стратегии.</p>
+                    <p class="text-justify mb-2 italic">AI translation tools (Google Translate, DeepL) combined with human expertise create robust communication strategies for real-time operations.</p>
+                    <p class="text-justify serif-sc">AI翻译工具（Google翻译、DeepL）结合人类专业知识，为实时运营创建强大的沟通策略。</p>
                 </div>
-                <div>
-                    <p class="mb-2 text-green-200 font-semibold text-xs uppercase">Deep Adaptation</p>
-                    <p>Localization ensures products, services, and marketing align with local customs, building trust and long-term customer loyalty.</p>
+                <div class="bg-green-700/50 p-4 rounded-lg border border-green-600">
+                    <p class="mb-2 text-green-200 font-semibold text-xs uppercase">Глубокая адаптация / Deep Adaptation / 深度适应</p>
+                    <p class="text-justify mb-2">Локализация обеспечивает соответствие продуктов, услуг и маркетинга местным обычаям, выстраивая доверие.</p>
+                    <p class="text-justify mb-2 italic">Localization ensures products, services, and marketing align with local customs, building trust and long-term customer loyalty.</p>
+                    <p class="text-justify serif-sc">本地化确保产品、服务和营销与当地习俗保持一致，建立信任和长期的客户忠诚度。</p>
                 </div>
             </div>
             
             <div class="mt-6 pt-6 border-t border-green-600/50 text-center">
-                <p class="text-sm font-medium">
-                    By integrating these strategies, businesses can overcome language barriers and strengthen their presence in the global marketplace.
-                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <p>Интегрируя эти стратегии, бизнес может преодолеть языковые барьеры.</p>
+                    <p class="italic">By integrating these strategies, businesses can overcome language barriers and strengthen their presence in the global marketplace.</p>
+                    <p class="serif-sc">通过整合这些策略，企业可以克服语言障碍并加强其在全球市场中的影响力。</p>
+                </div>
             </div>
         </div>
 
     </main>
 
-    <!-- 底部章节导航 -->
+    <!-- 底部章节导航 - 修复：三语言显示 -->
     <footer class="max-w-5xl mx-auto px-8 mt-8 mb-12 no-print">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -509,22 +681,22 @@
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     </div>
                     <div class="text-left">
-                        <div class="text-xs text-gray-400 uppercase">Previous</div>
-                        <div class="font-semibold">Chapter 3</div>
-                        <div class="text-xs text-gray-500">Market Expansion Impact</div>
+                        <div class="text-xs text-gray-400 uppercase">Предыдущая / Previous / 上一章</div>
+                        <div class="font-semibold">Chapter 3 / Глава 3 / 第3章</div>
+                        <div class="text-xs text-gray-500">Влияние на экспансию / Market Impact / 市场影响</div>
                     </div>
                 </a>
 
                 <a href="toc.html" class="flex flex-col items-center text-gray-400 hover:text-blue-800 transition-colors px-8">
                     <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    <span class="text-xs">Table of Contents</span>
+                    <span class="text-xs">Оглавление / Contents / 目录</span>
                 </a>
 
                 <a href="chapter5.html" class="flex items-center gap-3 text-gray-600 hover:text-green-800 transition-colors group text-right">
                     <div class="text-right">
-                        <div class="text-xs text-gray-400 uppercase">Next</div>
-                        <div class="font-semibold">Chapter 5</div>
-                        <div class="text-xs text-gray-500">Conclusion</div>
+                        <div class="text-xs text-gray-400 uppercase">Следующая / Next / 下一章</div>
+                        <div class="font-semibold">Chapter 5 / Глава 5 / 第5章</div>
+                        <div class="text-xs text-gray-500">Заключение / Conclusion / 结论</div>
                     </div>
                     <div class="w-10 h-10 rounded-full bg-green-100 group-hover:bg-green-200 flex items-center justify-center transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -537,7 +709,7 @@
     <!-- 页脚 -->
     <div class="max-w-5xl mx-auto px-8 text-center text-xs text-gray-400 pb-8">
         <p>© 2024 Чжао Цзе / Zhao Jie / 赵杰 • Al-Farabi Kazakh National University</p>
-        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 4, pp. 9-11</p>
+        <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Chapter 4 / Глава 4 / 第4章, pp. 9-11</p>
     </div>
 
     <script>
