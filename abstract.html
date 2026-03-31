@@ -32,6 +32,21 @@
             bottom: 0;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
+        
+        /* 三栏布局样式 */
+        .trilingual-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .trilingual-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
         .lang-section {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -41,6 +56,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
         .lang-section::before {
             content: '';
@@ -120,6 +136,43 @@
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.05em;
         }
+        
+        /* 标题卡片样式 */
+        .title-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .title-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .title-column {
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .title-column:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #e2e8f0, transparent);
+        }
+        
+        @media (max-width: 1024px) {
+            .title-column:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
         @media print {
             .no-print { display: none !important; }
             body { background: white; }
@@ -131,7 +184,7 @@
 
     <!-- 期刊头部 -->
     <header class="journal-header text-white py-6 px-4 md:px-8 shadow-lg relative z-20">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
             <div class="text-center md:text-left">
                 <h1 class="text-2xl md:text-3xl font-bold tracking-wide mb-1">ЭКОНОМИКА И СОЦИУМ</h1>
                 <p class="text-blue-200 text-sm italic tracking-wider">Economics and Society | 经济与社会</p>
@@ -148,7 +201,7 @@
 
     <!-- 导航栏 -->
     <nav class="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 no-print">
-        <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center gap-4">
                 <a href="toc.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm font-medium group">
                     <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,33 +223,55 @@
     </nav>
 
     <!-- 主内容 -->
-    <main class="max-w-5xl mx-auto px-4 md:px-8 py-8 md:py-12 fade-in-up">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12 fade-in-up">
 
-        <!-- 文章标题区 -->
+        <!-- 文章标题区 - 三栏布局 -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 md:p-10 mb-8 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 via-yellow-500 to-red-600"></div>
             
-            <div class="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-50 rounded-full border border-blue-100">
+            <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-blue-50 rounded-full border border-blue-100">
                 <span class="w-2 h-2 rounded-full bg-blue-600"></span>
                 <span class="text-xs font-bold text-blue-800 uppercase tracking-wider">Научная статья / Research Article / 研究论文</span>
             </div>
 
-            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight serif">
-                Языковые барьеры и их влияние<br class="md:hidden"> на расширение международного бизнеса
-            </h1>
+            <!-- 三语标题并排 -->
+            <div class="title-grid">
+                <!-- 俄语标题 -->
+                <div class="title-column">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <span class="lang-badge badge-ru text-sm">RU</span>
+                        <span class="text-xs font-bold text-blue-800 uppercase tracking-wider">Русский</span>
+                    </div>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+                        Языковые барьеры и их влияние на расширение международного бизнеса
+                    </h1>
+                </div>
 
-            <div class="flex items-center justify-center gap-3 text-gray-500 mb-4 max-w-3xl mx-auto">
-                <div class="h-px flex-1 bg-gradient-to-r from-transparent to-gray-300 max-w-24"></div>
-                <p class="text-sm md:text-base italic font-light text-center">Language Barriers and Their Impact on International Business Expansion</p>
-                <div class="h-px flex-1 bg-gradient-to-l from-transparent to-gray-300 max-w-24"></div>
+                <!-- 英语标题 -->
+                <div class="title-column">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <span class="lang-badge badge-en text-sm">EN</span>
+                        <span class="text-xs font-bold text-green-800 uppercase tracking-wider">English</span>
+                    </div>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-900 leading-tight italic">
+                        Language Barriers and Their Impact on International Business Expansion
+                    </h1>
+                </div>
+
+                <!-- 中文标题 -->
+                <div class="title-column">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <span class="lang-badge badge-cn text-sm">中</span>
+                        <span class="text-xs font-bold text-red-800 uppercase tracking-wider serif-sc">中文</span>
+                    </div>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-900 leading-tight serif-sc">
+                        语言障碍及其对国际商业扩张的影响
+                    </h1>
+                </div>
             </div>
 
-            <h2 class="text-xl md:text-2xl text-gray-700 font-medium serif-sc mb-6">
-                语言障碍及其对国际商业扩张的影响
-            </h2>
-
             <!-- 作者信息卡片 -->
-            <div class="inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 bg-gray-50 rounded-xl px-6 py-4 border border-gray-200 max-w-2xl mx-auto">
+            <div class="inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 bg-gray-50 rounded-xl px-6 py-4 border border-gray-200 max-w-2xl mx-auto mt-4">
                 <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-800 font-bold text-xl border-2 border-white shadow-md">
                         Ц
@@ -214,97 +289,108 @@
             </div>
         </div>
 
-        <!-- 摘要内容区 -->
-        <div class="space-y-6">
+        <!-- 摘要内容区 - 三栏布局 -->
+        <div class="mb-8">
+            <div class="text-center mb-6">
+                <h2 class="text-lg font-bold text-gray-900 section-title flex items-center justify-center gap-2">
+                    <span class="w-8 h-px bg-gradient-to-r from-transparent to-gray-400"></span>
+                    Аннотация | Abstract | 摘要
+                    <span class="w-8 h-px bg-gradient-to-l from-transparent to-gray-400"></span>
+                </h2>
+            </div>
 
-            <!-- 俄语摘要 -->
-            <section id="abstract-ru" class="lang-section lang-ru p-6 md:p-8">
-                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-100">
-                    <span class="lang-badge badge-ru">RU</span>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Аннотация</h3>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Russian Abstract</p>
+            <div class="trilingual-grid">
+                <!-- 俄语摘要 -->
+                <section id="abstract-ru" class="lang-section lang-ru p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+                        <span class="lang-badge badge-ru">RU</span>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Аннотация</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Russian Abstract</p>
+                        </div>
                     </div>
-                </div>
-                <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed text-justify">
-                    <p class="mb-4 text-base md:text-lg">
-                        Эта работа исследует значительное влияние языковых барьеров на расширение международного бизнеса. В условиях растущей глобализации эффективная коммуникация становится ключевым фактором успеха транснациональных компаний при выходе на новые рынки и взаимодействии с разнообразной аудиторией потребителей.
-                    </p>
-                    <p class="mb-4 text-base md:text-lg">
-                        В исследовании подчеркивается, как языковые барьеры могут препятствовать выходу на рынок, нарушать межкультурную коммуникацию и отрицательно сказываться на операциях, маркетинговых стратегиях и управлении отношениями с клиентами.
-                    </p>
-                    <p class="mb-4 text-base md:text-lg">
-                        Рассматриваются различные виды языковых барьеров, включая лексические различия, диалектные особенности и проблемы невербальной коммуникации, а также их роль в усугублении культурных недоразумений. Исследование также анализирует стратегии преодоления этих барьеров, такие как языковое обучение, набор многоязычных сотрудников, услуги перевода и культурная адаптация. Приводя примеры из реальной практики, работа демонстрирует важность преодоления языковых барьеров для компаний, стремящихся укрепить свое присутствие на международном рынке и повысить свою конкурентоспособность.
-                    </p>
-                    <p class="text-base md:text-lg">
-                        В заключение, автор утверждает, что язык является не просто инструментом коммуникации, но и стратегическим активом, влияющим на принятие решений и успех бизнеса на глобальном рынке.
-                    </p>
-                </div>
-            </section>
-
-            <!-- 英语摘要 -->
-            <section id="abstract-en" class="lang-section lang-en p-6 md:p-8">
-                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-100">
-                    <span class="lang-badge badge-en">EN</span>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Abstract</h3>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">English Abstract</p>
+                    <div class="prose prose-sm max-w-none text-gray-800 leading-relaxed text-justify">
+                        <p class="mb-4">
+                            Эта работа исследует значительное влияние языковых барьеров на расширение международного бизнеса. В условиях растущей глобализации эффективная коммуникация становится ключевым фактором успеха транснациональных компаний при выходе на новые рынки и взаимодействии с разнообразной аудиторией потребителей.
+                        </p>
+                        <p class="mb-4">
+                            В исследовании подчеркивается, как языковые барьеры могут препятствовать выходу на рынок, нарушать межкультурную коммуникацию и отрицательно сказываться на операциях, маркетинговых стратегиях и управлении отношениями с клиентами.
+                        </p>
+                        <p class="mb-4">
+                            Рассматриваются различные виды языковых барьеров, включая лексические различия, диалектные особенности и проблемы невербальной коммуникации, а также их роль в усугублении культурных недоразумений. Исследование также анализирует стратегии преодоления этих барьеров, такие как языковое обучение, набор многоязычных сотрудников, услуги перевода и культурная адаптация. Приводя примеры из реальной практики, работа демонстрирует важность преодоления языковых барьеров для компаний, стремящихся укрепить свое присутствие на международном рынке и повысить свою конкурентоспособность.
+                        </p>
+                        <p>
+                            В заключение, автор утверждает, что язык является не просто инструментом коммуникации, но и стратегическим активом, влияющим на принятие решений и успех бизнеса на глобальном рынке.
+                        </p>
                     </div>
-                </div>
-                <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed text-justify italic">
-                    <p class="mb-4 text-base md:text-lg not-italic">
-                        This paper explores the significant impact of language barriers on the expansion of international business. In the context of increasing globalization, effective communication has become a key factor in the success of multinational companies as they enter new markets and interact with diverse consumer bases.
-                    </p>
-                    <p class="mb-4 text-base md:text-lg not-italic">
-                        The study highlights how language barriers can hinder market entry, disrupt cross-cultural communication, and negatively affect operations, marketing strategies, and customer relationship management.
-                    </p>
-                    <p class="text-base md:text-lg not-italic">
-                        The paper discusses various types of language barriers, including linguistic differences, dialectal variations, and non-verbal communication issues, and emphasizes their role in exacerbating cultural misunderstandings. The research also examines strategies to mitigate these challenges, such as language training, multilingual staff recruitment, translation services, and cultural adaptation. By providing case studies and real-world examples, the study demonstrates the importance of overcoming language barriers for companies seeking to enhance their global presence and competitiveness. Ultimately, the paper suggests that language is not just a communication tool but a strategic asset that influences decision-making and business success in the global marketplace.
-                    </p>
-                </div>
-            </section>
+                </section>
 
-            <!-- 中文摘要 -->
-            <section id="abstract-cn" class="lang-section lang-cn p-6 md:p-8">
-                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-100">
-                    <span class="lang-badge badge-cn">中</span>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 serif-sc">摘要</h3>
-                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Chinese Abstract</p>
+                <!-- 英语摘要 -->
+                <section id="abstract-en" class="lang-section lang-en p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+                        <span class="lang-badge badge-en">EN</span>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Abstract</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">English Abstract</p>
+                        </div>
                     </div>
-                </div>
-                <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed text-justify serif-sc text-lg">
-                    <p class="mb-4">
-                        这项研究探讨了语言障碍对国际商业扩张的显著影响。在全球化日益增长的背景下，有效的沟通已成为跨国公司在进入新市场和与多样化的消费者群体互动时取得成功的关键因素。
-                    </p>
-                    <p class="mb-4">
-                        研究强调了语言障碍如何阻碍市场进入、扰乱跨文化沟通，并对运营、营销策略和客户关系管理产生负面影响。
-                    </p>
-                    <p class="mb-4">
-                        本文讨论了各种类型的语言障碍，包括词汇差异、方言特征和非语言沟通问题，以及它们在加剧文化误解中的作用。研究还分析了克服这些障碍的策略，如语言培训、多语言员工招聘、翻译服务和文化适应。通过提供实际案例，研究展示了克服语言障碍对于寻求加强国际市场存在和提高竞争力的公司的重要性。
-                    </p>
-                    <p>
-                        最终，作者认为语言不仅仅是沟通工具，而是影响全球市场决策和商业成功的战略资产。
-                    </p>
-                </div>
-            </section>
+                    <div class="prose prose-sm max-w-none text-gray-800 leading-relaxed text-justify italic">
+                        <p class="mb-4 not-italic">
+                            This paper explores the significant impact of language barriers on the expansion of international business. In the context of increasing globalization, effective communication has become a key factor in the success of multinational companies as they enter new markets and interact with diverse consumer bases.
+                        </p>
+                        <p class="mb-4 not-italic">
+                            The study highlights how language barriers can hinder market entry, disrupt cross-cultural communication, and negatively affect operations, marketing strategies, and customer relationship management.
+                        </p>
+                        <p class="mb-4 not-italic">
+                            The paper discusses various types of language barriers, including linguistic differences, dialectal variations, and non-verbal communication issues, and emphasizes their role in exacerbating cultural misunderstandings. The research also examines strategies to mitigate these challenges, such as language training, multilingual staff recruitment, translation services, and cultural adaptation. By providing case studies and real-world examples, the study demonstrates the importance of overcoming language barriers for companies seeking to enhance their global presence and competitiveness.
+                        </p>
+                        <p class="not-italic">
+                            Ultimately, the paper suggests that language is not just a communication tool but a strategic asset that influences decision-making and business success in the global marketplace.
+                        </p>
+                    </div>
+                </section>
 
+                <!-- 中文摘要 -->
+                <section id="abstract-cn" class="lang-section lang-cn p-6 md:p-8">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+                        <span class="lang-badge badge-cn">中</span>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 serif-sc">摘要</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Chinese Abstract</p>
+                        </div>
+                    </div>
+                    <div class="prose prose-sm max-w-none text-gray-800 leading-relaxed text-justify serif-sc">
+                        <p class="mb-4">
+                            本文研究了语言障碍对国际商业扩张的显著影响。在全球化日益增长的背景下，有效沟通已成为跨国公司进入新市场并与多样化消费者群体互动时取得成功的关键因素。
+                        </p>
+                        <p class="mb-4">
+                            研究强调了语言障碍如何阻碍市场进入、扰乱跨文化沟通，并对运营、营销策略和客户关系管理产生负面影响。
+                        </p>
+                        <p class="mb-4">
+                            本文讨论了各种类型的语言障碍，包括语言差异、方言变化和非言语沟通问题，并强调了它们在加剧文化误解中的作用。研究还分析了克服这些挑战的策略，如语言培训、多语种员工招聘、翻译服务和文化适应。通过提供案例研究和现实实例，研究证明了克服语言障碍对于寻求提升全球影响力和竞争力的企业的重要性。
+                        </p>
+                        <p>
+                            最终，本文认为语言不仅是沟通工具，更是影响全球市场竞争中决策制定和商业成功的战略资产。
+                        </p>
+                    </div>
+                </section>
+            </div>
         </div>
 
-        <!-- 关键词区 -->
+        <!-- 关键词区 - 三栏布局 -->
         <div id="keywords" class="mt-8 bg-white rounded-2xl shadow-lg border border-gray-200 p-6 md:p-8">
-            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 section-title">
+            <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center justify-center gap-2 section-title">
                 <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
                 </svg>
-                Ключевые слова / Keywords / 关键词
+                Ключевые слова | Keywords | 关键词
             </h3>
             
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="trilingual-grid gap-6">
                 <!-- 俄语关键词 -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                <div class="bg-blue-50/50 rounded-xl p-5 border border-blue-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="lang-badge badge-ru text-xs">RU</span>
                         <span class="text-sm font-bold text-blue-900 uppercase tracking-wider">Русский</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
@@ -318,9 +404,9 @@
                 </div>
 
                 <!-- 英语关键词 -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="w-2 h-2 rounded-full bg-green-600"></span>
+                <div class="bg-green-50/50 rounded-xl p-5 border border-green-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="lang-badge badge-en text-xs">EN</span>
                         <span class="text-sm font-bold text-green-900 uppercase tracking-wider">English</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
@@ -334,14 +420,14 @@
                 </div>
 
                 <!-- 中文关键词 -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="w-2 h-2 rounded-full bg-red-600"></span>
+                <div class="bg-red-50/50 rounded-xl p-5 border border-red-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="lang-badge badge-cn text-xs">中</span>
                         <span class="text-sm font-bold text-red-900 uppercase tracking-wider serif-sc">中文</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="keyword-tag px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 serif-sc">语言障碍</span>
-                        <span class="keyword-tag px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 serif-sc">国际业务</span>
+                        <span class="keyword-tag px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 serif-sc">国际商业</span>
                         <span class="keyword-tag px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 serif-sc">跨文化沟通</span>
                         <span class="keyword-tag px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 serif-sc">全球扩张</span>
                         <span class="keyword-tag px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 serif-sc">本地化</span>
@@ -353,23 +439,32 @@
 
         <!-- 引用信息 -->
         <div class="mt-8 citation-box rounded-xl p-6 shadow-md">
-            <h4 class="text-sm font-bold text-gray-800 mb-3 flex items-center gap-2 uppercase tracking-wider">
+            <h4 class="text-sm font-bold text-gray-800 mb-4 flex items-center justify-center gap-2 uppercase tracking-wider">
                 <svg class="w-4 h-4 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                 </svg>
-                How to cite / Как цитировать / 引用格式
+                How to cite | Как цитировать | 引用格式
             </h4>
-            <div class="bg-white rounded-lg p-4 border border-gray-200 font-mono text-sm text-gray-700 leading-relaxed">
-                <p class="mb-2"><strong>APA:</strong> Zhao, J. (2024). Language barriers and their impact on international business expansion. <em>Economics and Society</em>, 11(126), 226-240. https://doi.org/10.1234/econ.soc.2024.11.126.45</p>
-                <p class="mb-2"><strong>GB/T 7714:</strong> 赵杰. 语言障碍及其对国际商业扩张的影响[J]. 经济与社会, 2024, 11(126): 226-240.</p>
-                <p><strong>Russian Std:</strong> Чжао Цзе. Языковые барьеры и их влияние на расширение международного бизнеса // Экономика и социум. 2024. № 11(126). С. 226-240.</p>
+            <div class="grid md:grid-cols-3 gap-4 bg-white rounded-lg p-4 border border-gray-200 font-mono text-xs text-gray-700 leading-relaxed">
+                <div>
+                    <p class="font-bold text-blue-800 mb-1">APA:</p>
+                    <p>Zhao, J. (2024). Language barriers and their impact on international business expansion. <em>Economics and Society</em>, 11(126), 226-240. https://doi.org/10.1234/econ.soc.2024.11.126.45</p>
+                </div>
+                <div>
+                    <p class="font-bold text-green-800 mb-1">GB/T 7714:</p>
+                    <p class="serif-sc">赵杰. 语言障碍及其对国际商业扩张的影响[J]. 经济与社会, 2024, 11(126): 226-240.</p>
+                </div>
+                <div>
+                    <p class="font-bold text-red-800 mb-1">Russian Std:</p>
+                    <p>Чжао Цзе. Языковые барьеры и их влияние на расширение международного бизнеса // Экономика и социум. 2024. № 11(126). С. 226-240.</p>
+                </div>
             </div>
         </div>
 
     </main>
 
     <!-- 底部导航 -->
-    <footer class="max-w-5xl mx-auto px-8 mt-12 pb-8 no-print">
+    <footer class="max-w-7xl mx-auto px-8 mt-12 pb-8 no-print">
         <div class="bg-white rounded-xl shadow-md border border-gray-200 p-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <a href="toc.html" class="flex items-center gap-2 text-gray-600 hover:text-blue-800 transition-colors text-sm">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -392,7 +487,7 @@
     </footer>
 
     <!-- 页脚信息 -->
-    <div class="max-w-5xl mx-auto px-8 text-center text-xs text-gray-400 mt-8 pb-8">
+    <div class="max-w-7xl mx-auto px-8 text-center text-xs text-gray-400 mt-8 pb-8">
         <p>© 2024 Чжао Цзе / Zhao Jie / 赵杰 • Al-Farabi Kazakh National University, Almaty, Kazakhstan</p>
         <p class="mt-1">Published in «Экономика и социум» • ISSN 2225-1545 • Issue 11(126) • 27.11.2024</p>
     </div>
@@ -417,7 +512,7 @@
                 window.location.href = 'toc.html';
             }
             if (e.key === 'ArrowRight') {
-                window.location.href = 'chapter1.html'; // 或者下一页
+                window.location.href = 'chapter1.html';
             }
         });
 
@@ -434,16 +529,17 @@
             });
         });
 
-        // 页面加载动画
+        // 页面加载动画 - 三栏分别渐入
         window.addEventListener('load', () => {
-            document.querySelectorAll('.lang-section').forEach((section, index) => {
+            const columns = document.querySelectorAll('.lang-section');
+            columns.forEach((section, index) => {
                 section.style.opacity = '0';
-                section.style.transform = 'translateY(30px)';
+                section.style.transform = 'translateY(20px)';
                 setTimeout(() => {
                     section.style.transition = 'all 0.6s ease';
                     section.style.opacity = '1';
                     section.style.transform = 'translateY(0)';
-                }, index * 150);
+                }, index * 200);
             });
         });
     </script>
